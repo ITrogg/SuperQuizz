@@ -4,3 +4,73 @@
   --main-typo : 
   --secondary-typo :
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+.home-containner{
+  background: rgb(117,65,226);
+  background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 35%;
+  height: 14rem;
+
+  .welcome {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFE5BF;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: 7rem;
+    width: 65%;
+    border-radius: 0.1rem;
+    p {
+      margin: 0.3rem;
+      filter: drop-shadow(1px 2px 2px black);
+      font-family: "Concert One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+  
+  .former {
+    form{
+      label{
+        color: white;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+      }
+      input{
+        width: 15rem;
+        height : 1.5rem;
+      }
+    }
+  }
+
+  .button-containner {
+    margin-top: 1rem;
+    width: 37rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .go-button {
+      height: 2rem;
+      width: 4rem;
+      border-radius: 0.5rem;
+      border-color: black;
+      border: -1px;
+      background-color: green;
+      color: white;
+
+    }
+    .go-button:hover {
+      background-color: greenyellow;
+      color: black;
+    }
+  }
+}
