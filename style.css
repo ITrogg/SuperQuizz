@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 *{
   margin: 0;
-  --main-color : 
-  --main-typo : 
-  --secondary-typo :
+  --main-color : black;
+  --main-typo : "Concert One", sans-serif; 
+  --background-color : #fcb242;
+}
+
+/* Positionnement du background */
+body{
+  background-color: var(--background-color);
+  background-image:url(./img/Desktop_V1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* background mobile */
+@media(max-width : 500px) {
+  body{
+    background-image: url(./img/Mobile_V1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
