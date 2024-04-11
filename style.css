@@ -4,7 +4,8 @@
   --main-color : black;
   --main-typo : "Concert One", sans-serif; 
   --background-color : #fcb242;
-    margin : 0;
+  --box-color : linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
+  margin : 0;
 }
 
 /* Positionnement du background */
@@ -23,7 +24,34 @@ body{
   }
 }
 
-// SECTION HOME CONTAINNER 
+/* Box Score */
+.score-containner {
+  height: 30vh;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 2rem;
+}
+.score-background{
+  background: var(--box-color);
+  align-self: flex-end;
+  height: 10vh;
+  width: 15vw;
+  border-radius: 1.5rem;
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--main-typo);
+  h3{
+    font-weight: 100;
+    font-size: 2rem;
+  }
+  p{
+    font-size: 3rem;
+  }
+}
+
+
+/* SECTION HOME CONTAINNER  */
 
 .home-containner{
   background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
@@ -89,3 +117,5 @@ body{
       background-color: greenyellow;
       color: black;
     }
+  }
+}
