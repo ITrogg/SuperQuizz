@@ -26,7 +26,7 @@ body{
 
 /* Box Score */
 .score-containner {
-  height: 30vh;
+  height: 24vh;
   display: flex;
   flex-direction: row-reverse;
   padding: 2rem;
@@ -61,6 +61,11 @@ body{
 
 /* SECTION HOME CONTAINNER  */
 
+Main{
+  display: flex;
+  justify-content: center;
+}
+
 .home-containner{
   background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
   border-radius: 3rem;
@@ -68,8 +73,8 @@ body{
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  width: 35%;
-  height: 14rem;
+  width: 40%;
+  height: 20rem;
 
   .welcome {
     display: flex;
@@ -84,18 +89,20 @@ body{
     border-radius: 0.1rem;
     p {
       margin: 0.3rem;
-      filter: drop-shadow(1px 2px 2px black);
+      filter: drop-shadow(1px 1px 1px black);
       font-family: "Concert One", sans-serif;
-      font-weight: 400;
       font-style: normal;
+      font-size: larger;
     }
   }
   
   .former {
     form{
+      margin-top: 2rem;
+
       label{
         color: white;
-        margin-right: 1rem;
+        margin-right: 2rem;
         font-size: 1.2rem;
       }
       input{
@@ -106,7 +113,7 @@ body{
   }
 
   .button-containner {
-    margin-top: 1rem;
+    margin-top: 3rem;
     width: 86%;
     display: flex;
     justify-content: flex-end;
@@ -126,4 +133,8 @@ body{
       color: black;
     }
   }
+}
+
+@media(max-width : 500px) {
+  
 }
