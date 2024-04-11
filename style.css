@@ -8,7 +8,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
 .home-containner{
-  background: rgb(117,65,226);
   background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
   border-radius: 3rem;
   display: flex;
@@ -54,7 +53,7 @@
 
   .button-containner {
     margin-top: 1rem;
-    width: 37rem;
+    width: 86%;
     display: flex;
     justify-content: flex-end;
 
@@ -63,9 +62,9 @@
       width: 4rem;
       border-radius: 0.5rem;
       border-color: black;
-      border: -1px;
-      background-color: green;
-      color: white;
+      background-color: #FFE5BF;
+      color: black;
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
 
     }
     .go-button:hover {
