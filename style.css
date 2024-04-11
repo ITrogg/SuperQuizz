@@ -67,7 +67,7 @@ Main{
 }
 
 .home-containner{
-  background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
+  background: var(--box-color);
   border-radius: 3rem;
   display: flex;
   flex-direction: column;
@@ -89,8 +89,8 @@ Main{
     border-radius: 0.1rem;
     p {
       margin: 0.3rem;
-      filter: drop-shadow(1px 1px 1px black);
-      font-family: "Concert One", sans-serif;
+      filter: drop-shadow(1px 2px 2px black);
+      font-family: var(--main-typo)
       font-style: normal;
       font-size: larger;
     }
@@ -106,21 +106,21 @@ Main{
         font-size: 1.2rem;
       }
       input{
-        width: 15rem;
-        height : 1.5rem;
+        width: 16rem;
+        height : 1.8rem;
       }
     }
   }
 
   .button-containner {
-    margin-top: 3rem;
-    width: 86%;
+    margin-top: 2rem;
+    width: 90%;
     display: flex;
     justify-content: flex-end;
 
     .go-button {
-      height: 2rem;
-      width: 4rem;
+      height: 3rem;
+      width: 5rem;
       border-radius: 0.5rem;
       border-color: black;
       background-color: #FFE5BF;
@@ -129,8 +129,8 @@ Main{
 
     }
     .go-button:hover {
-      background-color: greenyellow;
-      color: black;
+      background-color: green;
+      color: white;
     }
   }
 }
