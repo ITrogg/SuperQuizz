@@ -1,11 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 *{
-  margin: 0;
-  --main-color : 
-  --main-typo : 
-  --secondary-typo :
+  --main-color : black;
+  --main-typo : "Concert One", sans-serif; 
+  --background-color : #fcb242;
+    margin : 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+/* Positionnement du background */
+body{
+  background-color: var(--background-color);
+  background-image:url(./img/Desktop_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* background mobile */
+@media(max-width : 500px) {
+  body{
+    background-image: url(./img/Mobile_background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+// SECTION HOME CONTAINNER 
 
 .home-containner{
   background: linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
@@ -71,5 +89,3 @@
       background-color: greenyellow;
       color: black;
     }
-  }
-}
