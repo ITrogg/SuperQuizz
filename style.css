@@ -68,10 +68,10 @@ header {
 @media (max-width : 450px){
   header{
     justify-content: center;
-    height: 26vh;
+    height: 28vh;
   }
   .score-background{
-    height: 10vh;
+    height: 11vh;
     width: 90%;
   }
 }
@@ -111,7 +111,7 @@ Main{
       filter: drop-shadow(1px 2px 2px black);
       font-family: var(--main-typo);
       font-style: normal;
-      font-size: larger;
+      font-size: x-large;
     }
   }
   
@@ -159,10 +159,10 @@ Main{
 @media(max-width : 450px) {
   
 Main{
-  margin-top: 2rem;
+  margin-top: 0rem;
  }
  .home-containner{
-  width: 95%;
+  width: 98%;
   height: 32rem;
 
   .welcome {
