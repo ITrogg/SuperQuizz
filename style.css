@@ -85,10 +85,10 @@ Main{
     flex-direction: column;
     align-items: center;
     background-color: #FFE5BF;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
-    height: 7rem;
-    width: 65%;
+    height: 10rem;
+    width: 75%;
     border-radius: 0.1rem;
     p {
       margin: 0.3rem;
@@ -101,7 +101,7 @@ Main{
   
   .former {
     form{
-      margin-top: 2rem;
+      margin-top: 3rem;
 
       label{
         color: white;
@@ -116,7 +116,7 @@ Main{
   }
 
   .button-containner {
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 90%;
     display: flex;
     justify-content: flex-end;
@@ -137,13 +137,65 @@ Main{
     }
   }
 }
-@media(max-width : 500px) {
+
+/* MEDIA QUERIE SECTION HOME CONTAINNER  */
+
+@media(max-width : 450px) {
   
+Main{
+  margin-top: 2rem;
+ }
+ .home-containner{
+  width: 95%;
+  height: 32rem;
+
+  .welcome {
+    width: 95%;
+    p {
+      font-size: larger;
+    }
+  }
+  .former {
+    form{
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label{
+        color: white;
+        margin-right: 0rem;
+        font-size: 1.2rem;
+      }
+      input{
+        width: 16rem;
+        height : 1.8rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .button-containner {
+    margin-top: 4rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+    .go-button {
+      height: 3rem;
+      width: 11rem;
+    }
+    .go-button:hover {
+      background-color: green;
+      color: white;
+    }
+  }
+ }
 }
+
 
 /* quizz container */
 
-.quizz-containner{
+/* .quizz-containner{
   background: var(--box-color);
   border-radius: 3rem;
   padding: 1rem;
@@ -175,9 +227,8 @@ width: 22rem;
 margin-top: 2rem;
 border-radius: 0.5rem;
 border-color: whitesmoke;
-}
 p{ margin-left: 0.2rem;
-width: 40%;
-height: 20rem;
-
-}
+  width: 40%;
+  height: 20rem;
+}  
+} */
