@@ -28,35 +28,61 @@ body{
 }
 
 /* Box Score */
-.score-containner {
-  height: 24vh;
+header {
+  height: 30vh;
   display: flex;
   flex-direction: row-reverse;
   padding: 2rem;
 }
+/* Box Score */
 .score-background{
   background: var(--box-color);
   align-self: flex-end;
   height: 15vh;
   width: 15vw;
   border-radius: 1.5rem;
-  padding: 1rem 2.5rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   font-family: var(--main-typo);
   color: white;
   .display{
     width: 50%;
-    h3{
-      font-weight: 100;
-      font-size: 1.5rem;
+    .display_title{
+      max-width: 100%;
+      max-height: 30%;
+      font-size: 2.3rem;
     }
-    p{
+    .display_value{
+      max-width: 100%;
+      max-height: 70%;
       margin-top: 10%;
-      font-size: 2.5rem;
-      sub {
-        font-size: 1rem;
+      font-size: 1rem;
+      em{
+        font-size: 3rem;
       }
+    } 
+  }
+}
+/* Version mobile */
+@media (max-width : 450px){
+  header{
+    justify-content: center;
+    height: 30vh;
+  }
+  .score-background{
+    height: 12vh;
+    width: 90%;
+    .display {
+      .display_title {
+        font-size: 1.5rem;
+      }
+      .display_value{
+        font-size: 0.8rem;
+        em {
+          font-size: 2.5rem;
+        }
+      } 
     }
   }
 }
@@ -70,7 +96,7 @@ Main{
   padding: 2rem;
 }
 
-/* .home-containner{
+.home-containner{
   background: var(--box-color);
   border-radius: 3rem;
   display: flex;
@@ -86,23 +112,23 @@ Main{
     flex-direction: column;
     align-items: center;
     background-color: #FFE5BF;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
-    height: 7rem;
-    width: 65%;
+    height: 10rem;
+    width: 75%;
     border-radius: 0.1rem;
     p {
       margin: 0.3rem;
       filter: drop-shadow(1px 2px 2px black);
       font-family: var(--main-typo);
       font-style: normal;
-      font-size: larger;
+      font-size: x-large;
     }
   }
   
   .former {
     form{
-      margin-top: 2rem;
+      margin-top: 3rem;
 
       label{
         color: white;
@@ -117,7 +143,7 @@ Main{
   }
 
   .button-containner {
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 90%;
     display: flex;
     justify-content: flex-end;
@@ -138,17 +164,17 @@ Main{
     }
   }
 }
-@media(max-width : 500px) {
+
+/* MEDIA QUERIE SECTION HOME CONTAINNER  */
+
+@media(max-width : 450px) {
   
-} */
+}
+
 
 /* quizz container */
 
 .quizz-containner{
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   background: var(--box-color);
   border-radius: 3rem;
   padding: 1rem;
@@ -211,38 +237,4 @@ footer {
   width: 100%;
 }
 
-@media screen and (max-width: 450px) {
 
-  main {
-    margin-top: 0rem;
-  }
-
-  .quizz-containner{
-    width: 95% ;
-    height: 32rem;
-    margin-top: 5rem;
-
-  }
-
-  #question {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(255, 229, 191);
-    margin: 2rem 10.7rem;
-    padding-top: 2rem;
-    height: 8rem;
-    width: auto;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .answer {
-    background-color: #FFE5BF;
-    width: 10rem;
-    border-color: whitesmoke;
-  }
-}
