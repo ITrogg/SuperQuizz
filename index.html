@@ -4,31 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>SuperQuizz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
   <header>
     <div class="score-background">
       <div class="display">
-        <h3>Score</h3>
-        <p> 0 </p>
+        <p class="display_title">Score</p>
+        <p class="display_value"><em>0</em></p>
       </div>
       <div class="display">
-        <h3>Time</h3>
-        <p>59.99 <sub>sec</sub></p>
+        <p class="display_title">Time</p>
+        <p class="display_value"><em>59.99</em>sec</p>
       </div>
     </div>
   </header>
 
 <!--Bertrand-->
+<main>
   <section class="home-containner">
     <div class="welcome">
-      <p>Bienvenue au <Strong><i>SuperQuizz</i></Strong> !!!</p>
+      <p>Bienvenue au <i>SuperQuizz</i> !!!</p>
       <p>C'est quoi ton petit nom ?</p>
     </div>
     <div class ="former">
       <form>
-        <label for="firstname">Nom</label>
+        <label for="firstname">Player Name</label>
         <input type="text" id="firstname">
       </form>
     </div>
@@ -37,9 +39,23 @@
     </div>
   </section>
 
-
   <section class="quizz-containner">
-    <!-- question -->
+    <div id = "question"> QUESTION " ": 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.? </div>
+
+    <article>
+    <div class= "answer">
+      <p> A: ceci est une reponse </p></div>
+    <div class= "answer">
+      <p> B: ceci est une reponse </p></div>
+    <div class="answer">
+      <p> C: ceci est une reponse </p></div>
+    <div class= "answer">
+      <p> D: ceci est une reponse </p></div>
+    </article> 
   </section>
+</main>
 </body>
 </html>
+
+<!-- Rappel : penser à l'ajout de la typo pour les questions -->
