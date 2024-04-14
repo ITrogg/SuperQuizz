@@ -20,6 +20,11 @@ const questions = [
   }
 ]
 
+// Fonction d'affichage des questions 
+window.onload = ()=>{
+      document.querySelector(".quizz-containner").style.display = "none"; 
+}
+
 /* Fonction de démarrage  */
     // Au clique Lire le prénom 
 
