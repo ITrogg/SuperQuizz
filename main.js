@@ -23,11 +23,13 @@ const questions = [
 // Fonction d'affichage des questions 
 window.onload = ()=>{
       document.querySelector(".quizz-containner").style.display = "none"; 
+      document.querySelector(".go-button").addEventListener("click", quizzdisplay) 
 }
 
-/* Fonction de démarrage  */
-    // Au clique Lire le prénom 
-
+const quizzdisplay = () => {
+      document.querySelector(".home-containner").style.display = "none"; 
+      document.querySelector(".quizz-containner").style.display = "";     
+}
 /* Fonction d'affichage d'une question */ 
     // doit afficher les réponses dans un ordre aléatoire
 
