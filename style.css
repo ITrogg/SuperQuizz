@@ -270,8 +270,55 @@ p{
     font-style: normal;
 }
 }
-  }
+}
 
+/* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
+
+@media(max-width : 450px) {
+  Main{
+    margin-top: 0rem;
+    padding: 0 1rem;
+   }
+   .quizz-containner {
+    background: var(--box-color);
+    width: 98%;
+    height: 32rem;
+   }
+   #question {
+    background-color: var(--box-color);
+    margin: 0 0 0 1rem;
+    padding: 0;
+    height: auto;
+    width: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+
+    p{
+      color: white;
+    }
+   }
+
+  article{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0;
+    align-items: center;
+
+    .answer{
+      margin-top: 1rem;
+      width: 90%;
+      justify-content: flex-start;
+
+      p{
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+/* FOOTER  */
 footer {
   display: flex;
   justify-content: center;
