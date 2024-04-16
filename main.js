@@ -39,33 +39,36 @@ const isTrue = (element) => {
 
 /* Fonction d'affichage des questions */
 const displayQuizz = (table) => {
-      for (let i=0; i<table.length; i++){
-            document.querySelector("section").remove();
-            const mixedAnswers = shuffle([table[i].goodanswer, table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]); // donne et recupère un tableau , fonction à faire 
-            document.querySelector("main").innerHTML = `<section class="quizz-containner">
-            <div id = "question">
-                  <p> QUESTION ${i+1}:</p>
-                  <p>${questions[i].question}</p>
-            </div>
-            
-            <article>
-                  <div class= "answer">
-                  <p>${mixedAnswers[0]}</p></div>
-                  <div class= "answer">
-                  <p>${mixedAnswers[1]}</p></div>
-                  <div class="answer">
-                  <p>${mixedAnswers[2]}</p></div>
-                  <div class= "answer">
-                  <p>${mixedAnswers[3]}</p></div>
-            </article> 
-            </section>`;
-            console.log(`Question ${i+1}`); 
-            
-            const buttons = document.querySelectorAll(".answer");
-            console.log(buttons);
-            for (let j=0; j<buttons.length; j++){
-                  console.log(buttons[j]);
-                  buttons[j].addEventListener("click", () => isTrue(buttons[j]));
-            }
-      }   
+  for (let i=0; i<table.length; i++){
+    setTimeout( () => {
+      document.querySelector("section").remove();
+      const mixedAnswers = shuffle([table[i].goodanswer, table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]); // donne et recupère un tableau , fonction à faire 
+      document.querySelector("main").innerHTML = `<section class="quizz-containner">
+      <div id = "question">
+        <p> QUESTION ${i+1}:</p>
+        <p>${questions[i].question}</p>
+      </div>
+      
+      <article>
+        <div class= "answer">
+        <p>${mixedAnswers[0]}</p></div>
+        <div class= "answer">
+        <p>${mixedAnswers[1]}</p></div>
+        <div class="answer">
+        <p>${mixedAnswers[2]}</p></div>
+        <div class= "answer">
+        <p>${mixedAnswers[3]}</p></div>
+      </article> 
+      </section>`;
+      console.log(`Question ${i+1}`); 
+      
+      const buttons = document.querySelectorAll(".answer");
+      console.log(buttons);
+      for (let j=0; j<buttons.length; j++){
+        console.log(buttons[j]);
+        buttons[j].addEventListener("click", () => isTrue(buttons[j]));
+
+      }
+    }, 10000*i)
+  }   
 }
