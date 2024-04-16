@@ -37,12 +37,25 @@ const isTrue = (element, index) => {
 }
 
 
-/* Fonction d'affichage des questions */
+/* Fonction pour la durée du jeu */
 const displayQuizz = (table) => {
-  let index = 0;
+  let index = 0; // pour remplacer boucle for  
+    /** Fonction Timer */
+  const startTimer = (duration) => {
+    const countdown = setInterval(() => {
+      duration --
+      console.log(duration);
+      if (duration <= 0) {
+        clearInterval(countdown);
+        console.log("Temps écoulé !");
+        nextQuestion();
+      }
+    }, 1000);
+  };
+    /** Fonction d'affichage  */
   const nextQuestion = () => { 
     if (index < table.length) {
-      const mixedAnswers = shuffle([table[index].goodanswer, table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]); // donne et recupère un tableau , fonction à faire 
+      const mixedAnswers = shuffle([table[index].goodanswer, table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
       document.querySelector("section").remove();
       document.querySelector("main").innerHTML = `<section class="quizz-containner">
       <div id = "question">
@@ -61,19 +74,18 @@ const displayQuizz = (table) => {
       </article> 
       </section>`;
       console.log(`Question ${index+1}`); 
-
+      startTimer(10);   /// Lancement du timer 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
         console.log(buttons[i]);
         buttons[i].addEventListener("click", () => isTrue(buttons[i], index));
       }
       index++;
-      setTimeout(nextQuestion, 10000);
     } else {
       document.querySelector("section").remove();
       // affichage fin du jeu 
       console.log ("c'est fini")
     }
   }
-  nextQuestion();
+  nextQuestion();  
 }
