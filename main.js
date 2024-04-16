@@ -26,8 +26,8 @@ document.querySelector(".quizz-containner").style.display = "none"; //! A enleve
 
 
 /* Fonction de randomisation des réponses */ 
-const shuffle = () => {
-      return "good";
+const shuffle = (table) => {
+      return table;
 }
 
 /* Fonction de vérification de la réponse du joueur */
@@ -40,6 +40,7 @@ const isTrue = () => {
 const displayQuizz = (table) => {
       for (let i=0; i<table.length; i++){
             document.querySelector("section").remove();
+            const mixedAnswers = shuffle([table[i].goodanswer, table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]); // donne et recupère un tableau , fonction à faire 
             document.querySelector("main").innerHTML = `<section class="quizz-containner">
             <div id = "question">
                   <p> QUESTION " ":</p>
@@ -48,14 +49,16 @@ const displayQuizz = (table) => {
             
             <article>
                   <div class= "answer">
-                  <p>${questions[i].goodanswer}</div>
+                  <p>${mixedAnswers[0]}</p></div>
                   <div class= "answer">
-                  <p>${questions[i].wronganswer1}</p></div>
+                  <p>${mixedAnswers[1]}</p></div>
                   <div class="answer">
-                  <p>${questions[i].wronganswer2}</p></div>
+                  <p>${mixedAnswers[2]}</p></div>
                   <div class= "answer">
-                  <p>${questions[i].wronganswer3}</p></div>
+                  <p>${mixedAnswers[3]}</p></div>
             </article> 
             </section>`;
+            console.log(`Question ${i+1}`);           
       }
+      
 }
