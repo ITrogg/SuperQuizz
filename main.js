@@ -30,7 +30,7 @@ const shuffle = (table) => {
 }
 
 /* Fonction de vérification de la réponse du joueur */
-const isTrue = (element) => {
+const isTrue = (element, index) => {
       console.log (element);
       console.log ("istrue");
       return true;
@@ -39,16 +39,16 @@ const isTrue = (element) => {
 
 /* Fonction d'affichage des questions */
 const displayQuizz = (table) => {
-  for (let i=0; i<table.length; i++){
-    setTimeout( () => {
+  let index = 0;
+  const nextQuestion = () => { 
+    if (index < table.length) {
+      const mixedAnswers = shuffle([table[index].goodanswer, table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]); // donne et recupère un tableau , fonction à faire 
       document.querySelector("section").remove();
-      const mixedAnswers = shuffle([table[i].goodanswer, table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]); // donne et recupère un tableau , fonction à faire 
       document.querySelector("main").innerHTML = `<section class="quizz-containner">
       <div id = "question">
-        <p> QUESTION ${i+1}:</p>
-        <p>${questions[i].question}</p>
+        <p> QUESTION ${index+1}:</p>
+        <p>${table[index].question}</p>
       </div>
-      
       <article>
         <div class= "answer">
         <p>${mixedAnswers[0]}</p></div>
@@ -60,15 +60,20 @@ const displayQuizz = (table) => {
         <p>${mixedAnswers[3]}</p></div>
       </article> 
       </section>`;
-      console.log(`Question ${i+1}`); 
-      
-      const buttons = document.querySelectorAll(".answer");
-      console.log(buttons);
-      for (let j=0; j<buttons.length; j++){
-        console.log(buttons[j]);
-        buttons[j].addEventListener("click", () => isTrue(buttons[j]));
+      console.log(`Question ${index+1}`); 
 
+      const buttons = document.querySelectorAll(".answer"); 
+      for (let i=0; i<buttons.length; i++){
+        console.log(buttons[i]);
+        buttons[i].addEventListener("click", () => isTrue(buttons[i], index));
       }
-    }, 10000*i)
-  }   
+      index++;
+      setTimeout(nextQuestion, 10000);
+    } else {
+      document.querySelector("section").remove();
+      // affichage fin du jeu 
+      console.log ("c'est fini")
+    }
+  }
+  nextQuestion();
 }
