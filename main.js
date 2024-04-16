@@ -20,35 +20,42 @@ const questions = [
   }
 ]
 
-// Fonction d'affichage des questions 
-window.onload = ()=>{
-      document.querySelector(".quizz-containner").style.display = "none"; 
-      document.querySelector(".go-button").addEventListener("click", quizzdisplay) 
-}
+let score = 0;
 
-const quizzdisplay = () => {
-      document.querySelector(".home-containner").style.display = "none"; 
-      document.querySelector(".quizz-containner").style.display = "";     
-}
-/* Fonction d'affichage d'une question */ 
-    // doit afficher les réponses dans un ordre aléatoire
+document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
+
+/* Fonction de randomisation des réponses */ 
+const shuffle = () => {
+      return "good";
+}
 
 /* Fonction de vérification de la réponse du joueur */
-      // lire la réponse
-      //retourner vrai ou faux
+const isTrue = () => {
+      return true;
+}
 
 
-/* Fonction fin de temps de réponse */
-      // là je sais vraiment pas 
-
-
-/* Fonction d'affichage fin de quizz */
-      // Affiche le score 
-      // Affiche un message personnalisé avec le prénom en fonction du score obtenu 
-
-
-/* Boucle */
-//  affiche question 
-//  vérifie réponse
-//  incrémente score
+/* Fonction d'affichage des questions */
+const displayQuizz = (table) => {
+      for (let i=0; i<table.length; i++){
+            document.querySelector("section").remove();
+            document.querySelector("main").innerHTML = `<section class="quizz-containner">
+            <div id = "question">
+                  <p> QUESTION " ":</p>
+                  <p>${questions[i].question}</p>
+            </div>
+            
+            <article>
+                  <div class= "answer">
+                  <p>${questions[i].goodanswer}</div>
+                  <div class= "answer">
+                  <p>${questions[i].wronganswer1}</p></div>
+                  <div class="answer">
+                  <p>${questions[i].wronganswer2}</p></div>
+                  <div class= "answer">
+                  <p>${questions[i].wronganswer3}</p></div>
+            </article> 
+            </section>`;
+      }
+}
