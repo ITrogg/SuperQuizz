@@ -237,4 +237,8 @@ footer {
   width: 100%;
 }
 
+/*  MEDIA QUERY QUIZZ CONTAINER*/
 
+@media(max-width : 450px) {
+  
+}
