@@ -21,7 +21,6 @@ const questions = [
 ]
 
 let score = 0;
-
 document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
 
@@ -31,7 +30,9 @@ const shuffle = (table) => {
 }
 
 /* Fonction de vérification de la réponse du joueur */
-const isTrue = () => {
+const isTrue = (element) => {
+      console.log (element);
+      console.log ("istrue");
       return true;
 }
 
@@ -43,7 +44,7 @@ const displayQuizz = (table) => {
             const mixedAnswers = shuffle([table[i].goodanswer, table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]); // donne et recupère un tableau , fonction à faire 
             document.querySelector("main").innerHTML = `<section class="quizz-containner">
             <div id = "question">
-                  <p> QUESTION " ":</p>
+                  <p> QUESTION ${i+1}:</p>
                   <p>${questions[i].question}</p>
             </div>
             
@@ -58,7 +59,13 @@ const displayQuizz = (table) => {
                   <p>${mixedAnswers[3]}</p></div>
             </article> 
             </section>`;
-            console.log(`Question ${i+1}`);           
-      }
-      
+            console.log(`Question ${i+1}`); 
+            
+            const buttons = document.querySelectorAll(".answer");
+            console.log(buttons);
+            for (let j=0; j<buttons.length; j++){
+                  console.log(buttons[j]);
+                  buttons[j].addEventListener("click", () => isTrue(buttons[j]));
+            }
+      }   
 }
