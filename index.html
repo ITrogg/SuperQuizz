@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <title>SuperQuizz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="shortcut icon" href="img/OS (1) (1).ico" type="favicon" /> 
 </head>
 <body>
   <header>
@@ -23,7 +24,7 @@
 
 <main>
   <!-- PARTIE HOME CONTAINER-->
-     <section class="home-containner">
+     <section class="home-containner" style="display: none;">
     <div class="welcome">
       <p>Bienvenue au <span>SuperQuizz</span> !!!</p>
       <p>C'est quoi ton petit nom ?</p>
@@ -47,12 +48,12 @@
     </div>
 
     <article>
-      <button onclick="isTrue('niquel', 0)" class= "answer">niquel</button>
-      <button onclick="isTrue('je sais pas', 0)" class= "answer">je sais pas</button>
-      <button onclick="isTrue('pas ouf', 0)" class="answer">pas ouf</button>
-      <button onclick="isTrue('je te le dirais pas', 0)" class= "answer">je te le dirais pas</button>
+      <button onclick="isTrue('niquel', 0, 'answer_1')" class="answer" id="answer_1">niquel</button>
+      <button onclick="isTrue('je sais pas', 0, 'answer_2')" class="answer" id="answer_2">je sais pas</button>
+      <button onclick="isTrue('pas ouf', 0, 'answer_3')" class="answer" id="answer_3">pas ouf</button>
+      <button onclick="isTrue('je te le dirais pas', 0, 'answer_4')" class="answer" id="answer_4">je te le dirais pas</button>
     </article> 
-  </section> 
+  </section>
 </main>
 <footer>
   <p>Fait avec &#9829; par de gentils wilders</p>
