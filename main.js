@@ -101,33 +101,22 @@ const startTimer = (departSecondes) => {
 /** FONCTION DE VERIFICATION */
 
 const isTrue = (reponse, numeroQuestion, buttonId) => {
-      // si variable globale === true alors jouer
-    if(variableglobale === true){
-      console.log("jouer")
-    } 
-      // Récupérer le bouton
-      const button = document.getElementById(buttonId)    
-    
-      // Dans ma data, récupérer la question via son numero
-      const myQuestion = questions[numeroQuestion] //MyQuestion: Object
-    
-      // Vérifier si la réponse === question récuperée , goodanswer
-      if (reponse === myQuestion.goodanswer) {
-        console.log("Tu as gagné")
-        button.style.backgroundColor = 'green';
-      } else {
-        button.style.backgroundColor = 'red';
-        console.log("Tu as perdu")
-      }
-    nextQuestion();
-      // changer la valeur de la variable globale à false
-     if(variableglobale === false){
-      // Sinon, afficher une alert précisant que la réponse est donnée
-      } else {
-        alert("réponse déjà donnée")
-          
-      }
-      // attend un tite seconde avant de passer à la question suivante
+    // Récupérer le bouton
+    const button = document.getElementById(buttonId)    
+  
+    // Dans ma data, récupérer la question via son numero
+    const myQuestion = questions[numeroQuestion] //MyQuestion: Object
+  
+    // Vérifier si la réponse === question récuperée , goodanswer
+    if (reponse === myQuestion.goodanswer) {
+      console.log("Tu as gagné")
+      score ++;
+      button.style.backgroundColor = 'green';
+    } else {
+      button.style.backgroundColor = 'red';
+      console.log("Tu as perdu")
+    }
+    // attend un tite seconde avant de passer à la question suivante
     setTimeout ( () => {
       clearInterval(timer);
       nextQuestion(questions);
