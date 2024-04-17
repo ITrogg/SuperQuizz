@@ -105,6 +105,7 @@ Main{
   padding: 1rem;
   width: 55%;
   height: 29rem;
+  font-family: var(--main-typo);
 
   .welcome {
     display: flex;
@@ -120,7 +121,6 @@ Main{
     p {
       margin: 0.3rem;
       filter: drop-shadow(1px 2px 2px black);
-      font-family: var(--main-typo);
       font-style: normal;
       font-size: x-large;
     }
@@ -129,7 +129,7 @@ Main{
   .former {
     form{
       margin-top: 3rem;
-
+      
       label{
         color: white;
         margin-right: 2rem;
@@ -269,7 +269,7 @@ Main{
       font-style: normal;   
     }
     .answer:hover {
-      background-color: #FFA216;
+      background-color: #ffa216;
       color: white;
     }
   }
@@ -323,11 +323,12 @@ footer {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(4deg, rgba(255,222,174,1) 0%, rgba(188,127,71,1) 100%);
+  background: linear-gradient(0deg, rgba(255,222,174,1) 0%, rgb(158, 92, 6) 100%);
   height: 5rem;
   position: absolute;
   bottom: 0;
   width: 100%;
+  font-family: var(--main-typo);
 }
 
 
