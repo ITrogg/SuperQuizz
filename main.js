@@ -36,11 +36,25 @@ const questions = [
     wronganswer3 : "Kompromat"
   },
   {
-    question: "Kathalina regarde une fois par sermaine un des trois films de la trilogie :",
+    question: "Kathalina regarde une fois par semaine un des trois films de la trilogie :",
     goodanswer : "Batman",
     wronganswer1 : "Le seigneur des anneaux",
     wronganswer2 : "Matrix",
     wronganswer3 : "Star Wars"
+  },
+  {
+    question: "Jo s'est déjà retrouvé seul dans un virgin megastore avec une célébrité ! Mais laquelle ?",
+    goodanswer : "Gad Elmaleh",
+    wronganswer1 : "Kylian Mbappé",
+    wronganswer2 : "Joey Star",
+    wronganswer3 : "Eric et Ramzy (enfin juste Eric... ou alors c'etait Ramzy ?)"
+  },
+  {
+    question: "Des fois Bertrand est maladroit, il s'est déjà cassé la clavicule :",
+    goodanswer : "En enjambant un petit portail pourtant ouvert...",
+    wronganswer1 : "En tombant dans sa douche",
+    wronganswer2 : "Au ski, apres un 360 frontflip nosegrab mal replaqué",
+    wronganswer3 : "En glissant d'un plongeoir"
   },
 ]
 
@@ -72,6 +86,7 @@ function arrayShuffle(good, bads) {
 const startTimer = (departSecondes) => {
   let temps = departSecondes
   const timerElement = document.getElementById("timer")
+  timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
     let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
     secondes = secondes < 10 ? "0" + secondes : secondes 
@@ -112,30 +127,37 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
   
     // Sinon, afficher une alert précisant que la réponse est donnée
     
-  }
+}
   /** Fonction d'affichage  */
 
 const nextQuestion = (table) => { 
-if (index < table.length) {
-  const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
+  if (index < table.length) {
+    const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
 
-  document.querySelector("section").remove();
-  document.querySelector("main").innerHTML = `<section class="quizz-containner">
-    <div id = "question">
-      <p> QUESTION ${index+1}:</p>
-      <p>${questions[index].question}</p>
-    </div>
-          
-    <article>
-    <button class= "answer" id="answer_1" onclick="isTrue('${mixedAnswers[0]}', ${index}, 'answer_1')" >${mixedAnswers[0]}</button>
-    <button class= "answer" id="answer_2" onclick="isTrue('${mixedAnswers[1]}', ${index}, 'answer_2')" >${mixedAnswers[1]}</button>
-    <button class= "answer" id="answer_3" onclick="isTrue('${mixedAnswers[2]}', ${index}, 'answer_3')" >${mixedAnswers[2]}</button>
-    <button class= "answer" id="answer_4" onclick="isTrue('${mixedAnswers[3]}', ${index}, 'answer_4')" >${mixedAnswers[3]}</button>
-    </article> 
-  </section>`;
+    document.querySelector("section").remove();
+    document.querySelector("main").innerHTML = `<section class="quizz-containner">
+        <div id = "question">
+          <p> QUESTION ${index+1}:</p>
+          <p>${questions[index].question}</p>
+        </div>
+        <article>
+          <button class= "answer" id="answer_1" onclick="isTrue('${mixedAnswers[0]}', ${index}, 'answer_1')" >
+            ${mixedAnswers[0]}
+          </button>
+          <button class= "answer" id="answer_2" onclick="isTrue('${mixedAnswers[1]}', ${index}, 'answer_2')" >
+            ${mixedAnswers[1]}
+          </button>
+          <button class= "answer" id="answer_3" onclick="isTrue('${mixedAnswers[2]}', ${index}, 'answer_3')" >
+            ${mixedAnswers[2]}
+          </button>
+          <button class= "answer" id="answer_4" onclick="isTrue('${mixedAnswers[3]}', ${index}, 'answer_4')" >
+            ${mixedAnswers[3]}
+          </button>
+        </article> 
+      </section>`;
 
     console.log(`Question ${index+1}`); 
-    startTimer(60);   /// Lancement du timer 
+    startTimer(59);   /// Lancement du timer 
 
     // const buttons = document.querySelectorAll(".answer"); 
     // for (let i=0; i<buttons.length; i++){
