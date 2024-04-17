@@ -282,7 +282,7 @@ Main{
       color: white;
     }
   }
-
+}
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
 @media(max-width : 450px) {
@@ -388,4 +388,3 @@ footer {
     }
   }
 }
-  }

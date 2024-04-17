@@ -96,6 +96,7 @@ const questions = [
 let score = 0;
 let index = 0; 
 let timer;
+let variableglobale = true;
 document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
 
@@ -135,11 +136,11 @@ const startTimer = (departSecondes) => {
 }
 /** FONCTION DE VERIFICATION */
 
+
 const isTrue = (reponse, numeroQuestion, buttonId) => {
       // si variable globale === true alors jouer
     if(variableglobale === true){
       console.log("jouer")
-    } 
       // Récupérer le bouton
       const button = document.getElementById(buttonId)    
     
@@ -149,24 +150,23 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
       // Vérifier si la réponse === question récuperée , goodanswer
       if (reponse === myQuestion.goodanswer) {
         console.log("Tu as gagné")
+        score ++
         button.style.backgroundColor = 'green';
       } else {
         button.style.backgroundColor = 'red';
         console.log("Tu as perdu")
       }
-    nextQuestion();
+      setTimeout ( () => {
+        clearInterval(timer);
+        nextQuestion(questions);
+       }, 1000);  
       // changer la valeur de la variable globale à false
-     if(variableglobale === false){
+      variableglobale = false;
       // Sinon, afficher une alert précisant que la réponse est donnée
-      } else {
-        alert("réponse déjà donnée")
-          
+    } else {
+        alert("réponse déjà donnée")      
       }
       // attend un tite seconde avant de passer à la question suivante
-    setTimeout ( () => {
-      clearInterval(timer);
-      nextQuestion(questions);
-     }, 1000);  
       // changer la valeur de la variable globale à false
   
     // Sinon, afficher une alert précisant que la réponse est donnée
@@ -175,6 +175,7 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
   /** Fonction d'affichage  */
 
 const nextQuestion = (table) => { 
+ variableglobale = true; 
 if (index < table.length) {
   // mélanger les réponses 
   const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
