@@ -77,7 +77,9 @@ const displayQuizz = (table) => {
   const isTrue = (reponse, numeroQuestion, buttonId) => {
 
       // si variable globale === true alors jouer
-    
+    if(variableglobale === true){
+      console.log("jouer")
+    } 
       // Récupérer le bouton
       const button = document.getElementById(buttonId)    
     
@@ -94,9 +96,12 @@ const displayQuizz = (table) => {
       }
     nextQuestion();
       // changer la valeur de la variable globale à false
-    
+     if(variableglobale === false){
       // Sinon, afficher une alert précisant que la réponse est donnée
-      
+      } else {
+        alert("réponse déjà donnée")
+          
+      }
     }
     /** Fonction d'affichage  */
 
@@ -120,7 +125,7 @@ const nextQuestion = () => {
     </section>`;
 
       console.log(`Question ${index+1}`); 
-      startTimer(1);   /// Lancement du timer 
+      startTimer(10);   /// Lancement du timer 
 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
