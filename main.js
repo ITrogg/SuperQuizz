@@ -81,6 +81,7 @@ const displayQuizz = (table) => {
     }, 1000);
   };
     /** Fonction d'affichage  */
+
 const nextQuestion = () => { 
   if (index < table.length) {
     const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
@@ -88,15 +89,15 @@ const nextQuestion = () => {
     document.querySelector("section").remove();
     document.querySelector("main").innerHTML = `<section class="quizz-containner">
       <div id = "question">
-        <p> QUESTION ${i+1}:</p>
-        <p>${questions[i].question}</p>
+        <p> QUESTION ${index+1}:</p>
+        <p>${questions[index].question}</p>
       </div>
             
       <article>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[0]}</button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[1]}</button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class="answer">${mixedAnswers[2]}</button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[3]}</button>
+        <button onclick="isTrue(${mixedAnswers[0]}, ${index})" class= "answer">${mixedAnswers[0]}</button>
+        <button onclick="isTrue(${mixedAnswers[1]}, ${index})" class= "answer">${mixedAnswers[1]}</button>
+        <button onclick="isTrue(${mixedAnswers[2]}, ${index})" class="answer">${mixedAnswers[2]}</button>
+        <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">${mixedAnswers[3]}</button>
       </article> 
     </section>`;
 
@@ -108,10 +109,11 @@ const buttons = document.querySelectorAll(".answer");
     buttons[i].addEventListener("click", () => isTrue(buttons[i], index));
     }
     index++;
-    } else {
-      document.querySelector("section").remove();
-      // affichage fin du jeu 
-      console.log ("c'est fini")
+
+  } else {
+    document.querySelector("section").remove();
+    // affichage fin du jeu 
+    console.log ("c'est fini")
     }
   }
   nextQuestion();  
