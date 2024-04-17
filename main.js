@@ -82,9 +82,11 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
       button.style.backgroundColor = 'red';
       console.log("Tu as perdu")
     }
-    clearInterval(timer);
-
-  nextQuestion(questions);
+    // attend un tite seconde avant de passer à la questio suivante
+    setTimeout ( () => {
+      clearInterval(timer);
+      nextQuestion(questions);
+     }, 1000);
     // changer la valeur de la variable globale à false
   
     // Sinon, afficher une alert précisant que la réponse est donnée
