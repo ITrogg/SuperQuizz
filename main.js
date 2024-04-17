@@ -81,31 +81,25 @@ const displayQuizz = (table) => {
     }, 1000);
   };
     /** Fonction d'affichage  */
-  const nextQuestion = () => { 
-    if (index < table.length) {
-      const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
-      document.querySelector("section").remove();
-             document.querySelector("main").innerHTML = `<section class="quizz-containner">
-            <div id = "question">
-                  <p> QUESTION ${index+1}:</p>
-                  <p>${questions[index].question}</p>
-            </div>
+
+const nextQuestion = () => { 
+  if (index < table.length) {
+    const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
+
+    document.querySelector("section").remove();
+    document.querySelector("main").innerHTML = `<section class="quizz-containner">
+      <div id = "question">
+        <p> QUESTION ${index+1}:</p>
+        <p>${questions[index].question}</p>
+      </div>
             
-            <article>
-                  <button onclick="isTrue(${mixedAnswers[0]}, ${index})" class= "answer">
-                        <p>${mixedAnswers[0]}</p>
-                  </button>
-                  <button onclick="isTrue(${mixedAnswers[1]}, ${index})" class= "answer">
-                        <p>${mixedAnswers[1]}</p>
-                  </button>
-                  <button onclick="isTrue(${mixedAnswers[2]}, ${index})" class="answer">
-                        <p>${mixedAnswers[2]}</p>
-                  </button>
-                  <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">
-                        <p>${mixedAnswers[3]}</p>
-                  </button>
-            </article> 
-            </section>`;
+      <article>
+        <button onclick="isTrue(${mixedAnswers[0]}, ${index})" class= "answer">${mixedAnswers[0]}</button>
+        <button onclick="isTrue(${mixedAnswers[1]}, ${index})" class= "answer">${mixedAnswers[1]}</button>
+        <button onclick="isTrue(${mixedAnswers[2]}, ${index})" class="answer">${mixedAnswers[2]}</button>
+        <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">${mixedAnswers[3]}</button>
+      </article> 
+    </section>`;
       console.log(`Question ${index+1}`); 
       startTimer(1);   /// Lancement du timer 
       const buttons = document.querySelectorAll(".answer"); 
