@@ -51,10 +51,45 @@ const questions = [
   },
   {
     question: "Des fois Bertrand est maladroit, il s'est déjà cassé la clavicule :",
-    goodanswer : "En enjambant un petit portail pourtant ouvert...",
+    goodanswer : "En enjambant un portail pourtant ouvert",
     wronganswer1 : "En tombant dans sa douche",
     wronganswer2 : "Au ski, apres un 360 frontflip nosegrab mal replaqué",
     wronganswer3 : "En glissant d'un plongeoir"
+  },
+  {
+    question: "Vanessa aime voyager! Lequel de ces pays n'a t'elle pas encore visité?",
+    goodanswer : "Le Kenya",
+    wronganswer1 : "Le Ghana",
+    wronganswer2 : "La Tunisie",
+    wronganswer3 : "La Belgique"
+  },
+  {
+    question: "Megane adore les tatoos et en a plusieur, lequel a t'elle fait?",
+    goodanswer : "Un oiseau qui s'envole",
+    wronganswer1 : "Le cerf du Jagermeister",
+    wronganswer2 : "Le visage de Billie Elish",
+    wronganswer3 : "Le prenom de son mec"
+  },
+  {
+    question: "Nicolas est un grand gaillard mais il a une grande phobie ! De quoi s'agit-il ? ",
+    goodanswer : "Des rats",
+    wronganswer1 : "De JavaScript",
+    wronganswer2 : "Du vide",
+    wronganswer3 : "De la foule"
+  },
+  {
+    question: "Lubin aime soigner sa chevelure! A quand remonte sa derniere visite chez les coiffeur ?",
+    goodanswer : "6 ans",
+    wronganswer1 : "3 ans",
+    wronganswer2 : "8 ans",
+    wronganswer3 : "Hier, entre 12h30 et 14h00 pour dégager un peu la nuque"
+  },
+  {
+    question: "Julien a dit: “j'aimerais être aussi bon formateur que j'etais ... “ :",
+    goodanswer : "Entraineur de Kayak",
+    wronganswer1 : "Joueur de pétanque",
+    wronganswer2 : "Musicien",
+    wronganswer3 : "Chômeur"
   },
 ]
 
@@ -161,7 +196,7 @@ if (index < table.length) {
     if (score <=4 ){
       message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
     } else if (score <= 8) {
-      message = "😕Bien tenté 😕 <br> Tu as encore beaucoup choses à apprendre sur tes camarades "
+      message = "😕Bien tenté 😕 <br> Tu as encore beaucoup de choses à apprendre sur tes camarades "
     } else if (score <= 12) {
       message = "👏 C'est une belle performance 👏 <br> Impressionnant !"
     } else {
