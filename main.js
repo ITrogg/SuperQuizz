@@ -93,22 +93,14 @@ const nextQuestion = () => {
       </div>
             
       <article>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
-          <p>${mixedAnswers[0]}</p>
-        </button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
-          <p>${mixedAnswers[1]}</p>
-        </button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class="answer">
-          <p>${mixedAnswers[2]}</p>
-        </button>
-        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
-          <p>${mixedAnswers[3]}</p>
-        </button>
+        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[0]}</button>
+        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[1]}</button>
+        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class="answer">${mixedAnswers[2]}</button>
+        <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">${mixedAnswers[3]}</button>
       </article> 
     </section>`;
 
-onsole.log(`Question ${index+1}`); 
+console.log(`Question ${index+1}`); 
 startTimer(1000);   /// Lancement du timer 
 const buttons = document.querySelectorAll(".answer"); 
   for (let i=0; i<buttons.length; i++){

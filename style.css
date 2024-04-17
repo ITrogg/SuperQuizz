@@ -264,15 +264,13 @@ Main{
       margin-top: 2rem;
       border-radius: 0.5rem;
       border-color: whitesmoke;
-        p{ 
-          font-family: "Itim", cursive;
-          font-weight: 400;
-          font-style: normal;
-        }
-     .answer:hover {
-      background-color: grey;
-      color: black;
-     }   
+      font-family: "Itim", cursive;
+      font-weight: 400;
+      font-style: normal;   
+    }
+    .answer:hover {
+      background-color: #FFA216;
+      color: white;
     }
   }
 
@@ -314,10 +312,7 @@ Main{
       margin-top: 1rem;
       width: 90%;
       justify-content: flex-start;
-
-      p{
-        margin-left: 1rem;
-      }
+      margin-left: 1rem;
     }
   }
 }
@@ -335,8 +330,4 @@ footer {
   width: 100%;
 }
 
-/*  MEDIA QUERY QUIZZ CONTAINER*/
 
-@media(max-width : 450px) {
-  
-}
