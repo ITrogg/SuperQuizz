@@ -37,13 +37,13 @@ const isTrue = (element, index) => {
 }
 
 
-/* Fonction pour la durée du jeu */
+/* Fonction jeu */
 const displayQuizz = (table) => {
   let index = 0; // pour remplacer boucle for  
     /** Fonction Timer */
   const startTimer = (duration) => {
     const countdown = setInterval(() => {
-      duration --
+      duration --;
       console.log(duration);
       if (duration <= 0) {
         clearInterval(countdown);
