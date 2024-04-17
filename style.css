@@ -123,6 +123,10 @@ Main{
       filter: drop-shadow(1px 2px 2px black);
       font-style: normal;
       font-size: x-large;
+      span {
+        font-style: italic;
+        font-size: 2rem;
+      }
     }
   }
   
