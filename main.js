@@ -74,7 +74,7 @@ const displayQuizz = (table) => {
     /** Fonction d'affichage  */
   const nextQuestion = () => { 
     if (index < table.length) {
-      const mixedAnswers = arrayShuffle(table[i].goodanswer, [table[i].wronganswer1, table[i].wronganswer2, table[i].wronganswer3]);
+      const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
       document.querySelector("section").remove();
       document.querySelector("main").innerHTML = `<section class="quizz-containner">
       <div id = "question">
