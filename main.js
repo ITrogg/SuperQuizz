@@ -23,8 +23,9 @@ const questions = [
   }
 ]
 
+
 let score = 0;
-//document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
+document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
 
 /* Fonction de randomisation des réponses */ 
@@ -54,17 +55,25 @@ function arrayShuffle(good, bads) {
 const displayQuizz = (table) => {
 
   let index = 0; // pour remplacer boucle for  
+  
     /** Fonction Timer */
-  const startTimer = (duration) => {
-    const countdown = setInterval(() => {
-      duration --;
-      if (duration <= 0) {
-        clearInterval(countdown);
-        console.log("Temps écoulé !");
+
+  const startTimer = (departSecondes) => {
+    let temps = departSecondes
+    const timerElement = document.getElementById("timer")
+    const timer = setInterval(() => { // Diminuer temps ttes les secondes
+      let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
+      secondes = secondes < 10 ? "0" + secondes : secondes 
+      timerElement.innerText = `${secondes}` // Display
+      temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
+      if (temps <= 0) {
+        clearInterval(timer);
         nextQuestion();
       }
-    }, 1000);
-  };
+    }, 1000)
+  }
+  /** FONCTION DE VERIFICATION */
+  
   const isTrue = (reponse, numeroQuestion, buttonId) => {
 
       // si variable globale === true alors jouer
@@ -89,36 +98,29 @@ const displayQuizz = (table) => {
       // Sinon, afficher une alert précisant que la réponse est donnée
       
     }
-
     /** Fonction d'affichage  */
-  const nextQuestion = () => { 
-    if (index < table.length) {
-      const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
-      document.querySelector("section").remove();
-      document.querySelector("main").innerHTML = `<section class="quizz-containner">
-          <div id = "question">
-            <p> QUESTION ${i+1}:</p>
-            <p>${questions[i].question}</p>
-          </div>
-          
-          <article>
-            <button onclick="isTrue(${mixedAnswers[i]}, ${i}, 'answer_1')" class="answer" id="answer_1">
-              <p>${mixedAnswers[0]}</p>
-            </button>
-            <button onclick="isTrue(${mixedAnswers[i]}, ${i}, 'answer_2')" class="answer" id="answer_2">
-              <p>${mixedAnswers[1]}</p>
-            </button>
-            <button onclick="isTrue(${mixedAnswers[i]}, ${i}, 'answer_3')" class="answer" id="answer_3">
-              <p>${mixedAnswers[2]}</p>
-            </button>
-            <button onclick="isTrue(${mixedAnswers[i]}, ${i}, 'answer_4')" class="answer" id="answer_4">
-              <p>${mixedAnswers[3]}</p>
-            </button>
-          </article> 
-        </section>`;
-      console.log(`Question ${index+1}`); 
-      startTimer(10);   /// Lancement du timer 
 
+const nextQuestion = () => { 
+  if (index < table.length) {
+    const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
+
+    document.querySelector("section").remove();
+    document.querySelector("main").innerHTML = `<section class="quizz-containner">
+      <div id = "question">
+        <p> QUESTION ${index+1}:</p>
+        <p>${questions[index].question}</p>
+      </div>
+            
+      <article>
+        <button onclick="isTrue(${mixedAnswers[0]}, ${index})" class= "answer">${mixedAnswers[0]}</button>
+        <button onclick="isTrue(${mixedAnswers[1]}, ${index})" class= "answer">${mixedAnswers[1]}</button>
+        <button onclick="isTrue(${mixedAnswers[2]}, ${index})" class="answer">${mixedAnswers[2]}</button>
+        <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">${mixedAnswers[3]}</button>
+      </article> 
+    </section>`;
+
+      console.log(`Question ${index+1}`); 
+      startTimer(1);   /// Lancement du timer 
 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
@@ -127,9 +129,24 @@ const displayQuizz = (table) => {
       }
       index++;
     } else {
-      document.querySelector("section").remove();
-      // affichage fin du jeu 
       console.log ("c'est fini")
+      document.querySelector("section").remove();
+      let message = "";
+      if (score <=4 ){
+        message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
+      } else if (score <= 8) {
+        message = "😕Bien tenté 😕 <br> Tu as encore beaucoup choses à apprendre sur tes camarades "
+      } else if (score <= 12) {
+        message = "👏 C'est une belle performance 👏 <br> Impressionnant !"
+      } else {
+        message = "🤩 Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !"
+      }
+      document.querySelector("main").innerHTML = ` <section class="home-containner final">
+      <h2>Quizz Terminé</h2>
+      <p id="score">Ton score : <span>${score}</span> </p>
+      <p id="comment"> ${message} </p>
+      <p id="replay">Rafraichit la page pour rejouer &#128512;</p>
+      </section>`
     }
   }
   nextQuestion();  

@@ -13,11 +13,11 @@
     <div class="score-background">
       <div class="display">
         <p class="display_title">Score</p>
-        <p class="display_value"><em>0</em></p>
+        <p class="display_value"><span id="score">0</span></p>
       </div>
       <div class="display">
         <p class="display_title">Time</p>
-        <p class="display_value"><em>59.99</em>sec</p>
+        <p class="display_value"><span id="timer"></span>sec</p>
       </div>
     </div>
   </header>
@@ -26,7 +26,7 @@
   <!-- PARTIE HOME CONTAINER-->
      <section class="home-containner" style="display: none;">
     <div class="welcome">
-      <p>Bienvenue au <i>SuperQuizz</i> !!!</p>
+      <p>Bienvenue au <span>SuperQuizz</span> !!!</p>
       <p>C'est quoi ton petit nom ?</p>
     </div>
     <div class ="former">
@@ -36,7 +36,7 @@
       </form>
     </div>
     <div class ="button-containner">
-      <button class ="go-button" >GO</button>
+      <button class ="go-button" onclick="displayQuizz(questions)">GO</button>
     </div>
   </section>
 
@@ -48,21 +48,16 @@
     </div>
 
     <article>
-      <button onclick="isTrue('niquel', 0, 'answer_1')" class="answer" id="answer_1">
-        <p>niquel</p></button>
-      <button onclick="isTrue('je sais pas', 0, 'answer_2')" class="answer" id="answer_2">
-        <p> je sais pas </p></button>
-      <button onclick="isTrue('pas ouf', 0, 'answer_3')" class="answer" id="answer_3">
-        <p> pas ouf </p></button>
-      <button onclick="isTrue('je te le dirais pas', 0, 'answer_4')" class="answer" id="answer_4">
-        <p> je te le dirais pas</p></button>
+      <button onclick="isTrue('niquel', 0, 'answer_1')" class="answer" id="answer_1">niquel</button>
+      <button onclick="isTrue('je sais pas', 0, 'answer_2')" class="answer" id="answer_2">je sais pas</button>
+      <button onclick="isTrue('pas ouf', 0, 'answer_3')" class="answer" id="answer_3">pas ouf</button>
+      <button onclick="isTrue('je te le dirais pas', 0, 'answer_4')" class="answer" id="answer_4">je te le dirais pas</button>
     </article> 
-  </section> -->
+  </section>
 </main>
 <footer>
+  <p>Fait avec &#9829; par de gentils wilders</p>
   <p>&copy;2024 Wild Code School</p>
-  <p>Made with &#9829;by wilders</p>
-  <p>Image freepicks</p>
 </footer>
 
 </body>
