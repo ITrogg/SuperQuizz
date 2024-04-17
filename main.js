@@ -23,7 +23,7 @@ const questions = [
   }
 ]
 
-let score = 0;
+let score = 13;
 document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
 
@@ -107,7 +107,7 @@ const displayQuizz = (table) => {
             </article> 
             </section>`;
       console.log(`Question ${index+1}`); 
-      startTimer(10);   /// Lancement du timer 
+      startTimer(1);   /// Lancement du timer 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
         console.log(buttons[i]);
@@ -115,17 +115,24 @@ const displayQuizz = (table) => {
       }
       index++;
     } else {
-      document.querySelector("section").remove();
-      const finalDisplay = `  <section class="home-containner final">
-      <h2>Quizz Terminé</h2>
-      <p id="score">Ton score : <span>0</span> </p>
-      <p id="comment">Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais </p>
-      <p id="comment">Bien tenté, mais tu as encore beaucoup choses à apprendre sur les wilders 😕</p>
-      <p id="comment">C'est une belle performance 👏 <br> Impressionnant !</p>
-      <p id="comment">Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire ! </p>
-      <p id="replay">Rafraichit la page pour rejouer &#128512;</p>
-    </section>`
       console.log ("c'est fini")
+      document.querySelector("section").remove();
+      let message = "";
+      if (score <=4 ){
+        message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
+      } else if (score <= 8) {
+        message = "😕Bien tenté 😕 <br> Tu as encore beaucoup choses à apprendre sur tes camarades "
+      } else if (score <= 12) {
+        message = "👏 C'est une belle performance 👏 <br> Impressionnant !"
+      } else {
+        message = "🤩 Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !"
+      }
+      document.querySelector("main").innerHTML = ` <section class="home-containner final">
+      <h2>Quizz Terminé</h2>
+      <p id="score">Ton score : <span>${score}</span> </p>
+      <p id="comment"> ${message} </p>
+      <p id="replay">Rafraichit la page pour rejouer &#128512;</p>
+      </section>`
     }
   }
   nextQuestion();  
