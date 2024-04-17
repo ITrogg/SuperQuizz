@@ -86,8 +86,6 @@ const startTimer = (departSecondes) => {
 /** FONCTION DE VERIFICATION */
 
 const isTrue = (reponse, numeroQuestion, buttonId) => {
-    // si variable globale === true alors jouer
-  
     // Récupérer le bouton
     const button = document.getElementById(buttonId)    
   
@@ -103,29 +101,28 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
       button.style.backgroundColor = 'red';
       console.log("Tu as perdu")
     }
-    // attend un tite seconde avant de passer à la questio suivante
+    // attend un tite seconde avant de passer à la question suivante
     setTimeout ( () => {
       clearInterval(timer);
       nextQuestion(questions);
-     }, 1000);
-    // changer la valeur de la variable globale à false
-  
-    // Sinon, afficher une alert précisant que la réponse est donnée
-    
+     }, 1000);    
   }
+
   /** Fonction d'affichage  */
 
 const nextQuestion = (table) => { 
 if (index < table.length) {
+  // mélanger les réponses 
   const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
-
+  // suppr la question précedante et affiche le score actuel 
   document.querySelector("section").remove();
+  document.querySelector("#score").textContent = score;
+  // Afficage de la question
   document.querySelector("main").innerHTML = `<section class="quizz-containner">
     <div id = "question">
       <p> QUESTION ${index+1}:</p>
       <p>${questions[index].question}</p>
     </div>
-          
     <article>
     <button class= "answer" id="answer_1" onclick="isTrue('${mixedAnswers[0]}', ${index}, 'answer_1')" >${mixedAnswers[0]}</button>
     <button class= "answer" id="answer_2" onclick="isTrue('${mixedAnswers[1]}', ${index}, 'answer_2')" >${mixedAnswers[1]}</button>
@@ -133,20 +130,15 @@ if (index < table.length) {
     <button class= "answer" id="answer_4" onclick="isTrue('${mixedAnswers[3]}', ${index}, 'answer_4')" >${mixedAnswers[3]}</button>
     </article> 
   </section>`;
-
-    console.log(`Question ${index+1}`); 
-    startTimer(60);   /// Lancement du timer 
-
-    // const buttons = document.querySelectorAll(".answer"); 
-    // for (let i=0; i<buttons.length; i++){
-    //   console.log(buttons[i]);
-    //   buttons[i].addEventListener("click", () => isTrue(buttons[i], index));
-    // }
-    index++;
+  // Lancement du timer 
+  startTimer(60); 
+  // incrémenter l'index pour la question suivante  
+  index++;
   } else {
-    console.log ("c'est fini")
+    // Fin des question suppr dernière question et bloc score 
     document.querySelector("section").remove();
-
+    document.querySelector(".score-background").remove();
+    // création d'un message personalisé en fonction du score 
     let message = "";
     if (score <=4 ){
       message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
@@ -157,6 +149,7 @@ if (index < table.length) {
     } else {
       message = "🤩 Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !"
     }
+    // Affichage du bloc finale
     document.querySelector("main").innerHTML = ` <section class="home-containner final">
     <h2>Quizz Terminé</h2>
     <p id="score">Ton score : <span>${score}</span> </p>
@@ -165,5 +158,3 @@ if (index < table.length) {
     </section>`
   }
 }  
-
-
