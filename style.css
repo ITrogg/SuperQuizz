@@ -163,7 +163,7 @@ Main{
 
     }
     .go-button:hover {
-      background-color: green;
+      background-color: #FFA216;
       color: white;
     }
   }
@@ -215,7 +215,7 @@ Main{
       width: 11rem;
     }
     .go-button:hover {
-      background-color: green;
+      background-color: #FFA216;
       color: white;
     }
   }
@@ -317,6 +317,10 @@ Main{
       width: 90%;
       justify-content: flex-start;
       margin-left: 1rem;
+    }
+    .answer:hover {
+      background-color: #FFA216;
+      color: white;
     }
   }
 }

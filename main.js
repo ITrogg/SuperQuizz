@@ -68,18 +68,23 @@ const isTrue = (reponse, numeroQuestion) => {
 const displayQuizz = (table) => {
 
   let index = 0; // pour remplacer boucle for  
+  
     /** Fonction Timer */
-  const startTimer = (duration) => {
-    const countdown = setInterval(() => {
-      duration --;
-      console.log(duration);
-      if (duration <= 0) {
-        clearInterval(countdown);
-        console.log("Temps écoulé !");
+  const startTimer = (departSecondes) => {
+    let temps = departSecondes
+    const timerElement = document.getElementById("timer")
+    const timer = setInterval(() => { // Diminuer temps ttes les secondes
+      let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
+      secondes = secondes < 10 ? "0" + secondes : secondes 
+      timerElement.innerText = `${secondes}` // Display
+      temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
+      if (temps <= 0) {
+        clearInterval(timer);
         nextQuestion();
       }
-    }, 1000);
-  };
+    }, 1000)
+  }
+
     /** Fonction d'affichage  */
 
 const nextQuestion = () => { 
@@ -100,6 +105,7 @@ const nextQuestion = () => {
         <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">${mixedAnswers[3]}</button>
       </article> 
     </section>`;
+
       console.log(`Question ${index+1}`); 
       startTimer(1);   /// Lancement du timer 
       const buttons = document.querySelectorAll(".answer"); 
