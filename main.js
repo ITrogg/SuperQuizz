@@ -87,21 +87,21 @@ const displayQuizz = (table) => {
       document.querySelector("section").remove();
              document.querySelector("main").innerHTML = `<section class="quizz-containner">
             <div id = "question">
-                  <p> QUESTION ${i+1}:</p>
-                  <p>${questions[i].question}</p>
+                  <p> QUESTION ${index+1}:</p>
+                  <p>${questions[index].question}</p>
             </div>
             
             <article>
-                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                  <button onclick="isTrue(${mixedAnswers[0]}, ${index})" class= "answer">
                         <p>${mixedAnswers[0]}</p>
                   </button>
-                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                  <button onclick="isTrue(${mixedAnswers[1]}, ${index})" class= "answer">
                         <p>${mixedAnswers[1]}</p>
                   </button>
-                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class="answer">
+                  <button onclick="isTrue(${mixedAnswers[2]}, ${index})" class="answer">
                         <p>${mixedAnswers[2]}</p>
                   </button>
-                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                  <button onclick="isTrue(${mixedAnswers[3]}, ${index})" class= "answer">
                         <p>${mixedAnswers[3]}</p>
                   </button>
             </article> 
