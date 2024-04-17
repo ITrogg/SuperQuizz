@@ -1,26 +1,47 @@
 //  Tableau questions 
 const questions = [
   { 
-    question : "Comment ça va ?",
-    goodanswer : "niquel",
-    wronganswer1 : "je sais pas",
-    wronganswer2 : "pas ouf",
-    wronganswer3 : "je te le dirais pas"
+    question : "Le club de volley de Dylan s'appel VLAM, cela signifie :",
+    goodanswer : "Volley Loisir Association de Montaudran",
+    wronganswer1 : "Vitesse, Lucidité, Amour et Mobilité",
+    wronganswer2 : "Vertical Line Array Measurement",
+    wronganswer3 : "Volley Ligue Amateur de Montauban"
   },
   {
-    question: "bonjour",
-    goodanswer : "Javascript",
-    wronganswer1 : "HTML",
-    wronganswer2 : "CSS",
-    wronganswer3 : "Python"
+    question: "Bastien adore manger ses frites avec :",
+    goodanswer : "Une sauce vinaigre échalote",
+    wronganswer1 : "Du ketchup",
+    wronganswer2 : "Rien, nature et sans sel",
+    wronganswer3 : "Sa copine"
   },
   {
-    question: "Quelles sont les meilleures pâtes ?",
-    goodanswer : "Penne",
-    wronganswer1 : "Macaroni",
-    wronganswer2 : "Nouilles",
-    wronganswer3 : "Fusilli"
-  }
+    question: "Oresti arrive en retard le matin car il joue toutes les nuits à :",
+    goodanswer : "Valorant",
+    wronganswer1 : "League of Legends",
+    wronganswer2 : "Snake sur Nokia 3310",
+    wronganswer3 : "Blocky Games"
+  },
+  {
+    question: "AnneDo est une sacrée danseuse ! Quelle danse pratique-t-elle ?",
+    goodanswer : "La Salsa",
+    wronganswer1 : "Le Tango Argentin",
+    wronganswer2 : "La Capoeira",
+    wronganswer3 : "Le Twerk"
+  },
+  {
+    question: "Lequel des ces groupes/artiste Imanol n'a jamais vu en concert ?",
+    goodanswer : "Metallica",
+    wronganswer1 : "Black Eyed Peas",
+    wronganswer2 : "Goran Bregovic",
+    wronganswer3 : "Kompromat"
+  },
+  {
+    question: "Kathalina regarde une fois par sermaine un des trois films de la trilogie :",
+    goodanswer : "Batman",
+    wronganswer1 : "Le seigneur des anneaux",
+    wronganswer2 : "Matrix",
+    wronganswer3 : "Star Wars"
+  },
 ]
 
 let score = 0;
@@ -123,6 +144,7 @@ if (index < table.length) {
   } else {
     console.log ("c'est fini")
     document.querySelector("section").remove();
+
     let message = "";
     if (score <=4 ){
       message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
