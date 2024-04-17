@@ -122,3 +122,5 @@ const displayQuizz = (table) => {
   }
   nextQuestion();  
 }
+
+
