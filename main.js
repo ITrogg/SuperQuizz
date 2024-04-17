@@ -25,6 +25,7 @@ const questions = [
 
 let score = 0;
 let index = 0; 
+let timer;
 document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
 
 
@@ -50,7 +51,7 @@ function arrayShuffle(good, bads) {
 const startTimer = (departSecondes) => {
   let temps = departSecondes
   const timerElement = document.getElementById("timer")
-  const timer = setInterval(() => { // Diminuer temps ttes les secondes
+  timer = setInterval(() => { // Diminuer temps ttes les secondes
     let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
     secondes = secondes < 10 ? "0" + secondes : secondes 
     timerElement.innerText = `${secondes}` // Display
@@ -81,6 +82,8 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
       button.style.backgroundColor = 'red';
       console.log("Tu as perdu")
     }
+    clearInterval(timer);
+
   nextQuestion(questions);
     // changer la valeur de la variable globale à false
   
