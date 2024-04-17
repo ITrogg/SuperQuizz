@@ -68,18 +68,23 @@ const isTrue = (reponse, numeroQuestion) => {
 const displayQuizz = (table) => {
 
   let index = 0; // pour remplacer boucle for  
+  
     /** Fonction Timer */
-  const startTimer = (duration) => {
-    const countdown = setInterval(() => {
-      duration --;
-      console.log(duration);
-      if (duration <= 0) {
-        clearInterval(countdown);
-        console.log("Temps écoulé !");
+  const startTimer = (departSecondes) => {
+    let temps = departSecondes
+    const timerElement = document.getElementById("timer")
+    const timer = setInterval(() => { // Diminuer temps ttes les secondes
+      let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
+      secondes = secondes < 10 ? "0" + secondes : secondes 
+      timerElement.innerText = `${secondes}` // Display
+      temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
+      if (temps <= 0) {
+        clearInterval(timer);
         nextQuestion();
       }
-    }, 1000);
-  };
+    }, 1000)
+  }
+
     /** Fonction d'affichage  */
 
 const nextQuestion = () => { 
@@ -102,7 +107,7 @@ const nextQuestion = () => {
     </section>`;
 
 console.log(`Question ${index+1}`); 
-startTimer(1000);   /// Lancement du timer 
+startTimer(60);   /// Lancement du timer 
 const buttons = document.querySelectorAll(".answer"); 
   for (let i=0; i<buttons.length; i++){
     console.log(buttons[i]);
@@ -110,10 +115,10 @@ const buttons = document.querySelectorAll(".answer");
     }
     index++;
 
-  } else {
-    document.querySelector("section").remove();
-    // affichage fin du jeu 
-    console.log ("c'est fini")
+    } else {
+      document.querySelector("section").remove();
+      // affichage fin du jeu 
+      console.log ("c'est fini")
     }
   }
   nextQuestion();  
