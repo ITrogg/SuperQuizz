@@ -93,7 +93,7 @@ const displayQuizz = (table) => {
       </article> 
       </section>`;
       console.log(`Question ${index+1}`); 
-      startTimer(10);   /// Lancement du timer 
+      startTimer(1000);   /// Lancement du timer 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
         console.log(buttons[i]);
