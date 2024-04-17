@@ -1,26 +1,47 @@
 //  Tableau questions 
 const questions = [
   { 
-    question : "Comment ça va ?",
-    goodanswer : "niquel",
-    wronganswer1 : "je sais pas",
-    wronganswer2 : "pas ouf",
-    wronganswer3 : "je te le dirais pas"
+    question : "Le club de volley de Dylan s'appel VLAM, cela signifie :",
+    goodanswer : "Volley Loisir Association de Montaudran",
+    wronganswer1 : "Vitesse, Lucidité, Amour et Mobilité",
+    wronganswer2 : "Vertical Line Array Measurement",
+    wronganswer3 : "Volley Ligue Amateur de Montauban"
   },
   {
-    question: "bonjour",
-    goodanswer : "Javascript",
-    wronganswer1 : "HTML",
-    wronganswer2 : "CSS",
-    wronganswer3 : "Python"
+    question: "Bastien adore manger ses frites avec :",
+    goodanswer : "Une sauce vinaigre échalote",
+    wronganswer1 : "Du ketchup",
+    wronganswer2 : "Rien, nature et sans sel",
+    wronganswer3 : "Sa copine"
   },
   {
-    question: "Quelles sont les meilleures pâtes ?",
-    goodanswer : "Penne",
-    wronganswer1 : "Macaroni",
-    wronganswer2 : "Nouilles",
-    wronganswer3 : "Fusilli"
-  }
+    question: "Oresti arrive en retard le matin car il joue toutes les nuits à :",
+    goodanswer : "Valorant",
+    wronganswer1 : "League of Legends",
+    wronganswer2 : "Snake sur Nokia 3310",
+    wronganswer3 : "Blocky Games"
+  },
+  {
+    question: "AnneDo est une sacrée danseuse ! Quelle danse pratique-t-elle ?",
+    goodanswer : "La Salsa",
+    wronganswer1 : "Le Tango Argentin",
+    wronganswer2 : "La Capoeira",
+    wronganswer3 : "Le Twerk"
+  },
+  {
+    question: "Lequel des ces groupes/artiste Imanol n'a jamais vu en concert ?",
+    goodanswer : "Metallica",
+    wronganswer1 : "Black Eyed Peas",
+    wronganswer2 : "Goran Bregovic",
+    wronganswer3 : "Kompromat"
+  },
+  {
+    question: "Kathalina regarde une fois par sermaine un des trois films de la trilogie :",
+    goodanswer : "Batman",
+    wronganswer1 : "Le seigneur des anneaux",
+    wronganswer2 : "Matrix",
+    wronganswer3 : "Star Wars"
+  },
 ]
 
 
@@ -56,8 +77,7 @@ const displayQuizz = (table) => {
 
   let index = 0; // pour remplacer boucle for  
   
-    /** Fonction Timer */
-
+  /** Fonction Timer */
   const startTimer = (departSecondes) => {
     let temps = departSecondes
     const timerElement = document.getElementById("timer")
@@ -65,15 +85,14 @@ const displayQuizz = (table) => {
       let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
       secondes = secondes < 10 ? "0" + secondes : secondes 
       timerElement.innerText = `${secondes}` // Display
-      temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
       if (temps <= 0) {
         clearInterval(timer);
         nextQuestion();
       }
     }, 1000)
   }
+
   /** FONCTION DE VERIFICATION */
-  
   const isTrue = (reponse, numeroQuestion, buttonId) => {
 
       // si variable globale === true alors jouer
@@ -120,7 +139,7 @@ const nextQuestion = () => {
     </section>`;
 
       console.log(`Question ${index+1}`); 
-      startTimer(1);   /// Lancement du timer 
+      startTimer(60);   /// Lancement du timer 
 
       const buttons = document.querySelectorAll(".answer"); 
       for (let i=0; i<buttons.length; i++){
