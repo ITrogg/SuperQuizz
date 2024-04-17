@@ -30,12 +30,18 @@ const shuffle = (table) => {
 }
 
 /* Fonction de vérification de la réponse du joueur */
-const isTrue = (element) => {
-      console.log (element);
+const isTrue = (reponse, numeroQuestion) => {
+      // Dans ma data, récupérer la question via son numero
+
+      // Vérifier si la réponse === question récuperée , goodanswer
+      // Si oui, gagné
+      // Si non, perdu
+      console.log(reponse)
+      console.log(numeroQuestion)
       console.log ("istrue");
       return true;
-}
 
+      }
 
 /* Fonction d'affichage des questions */
 const displayQuizz = (table) => {
@@ -49,14 +55,18 @@ const displayQuizz = (table) => {
             </div>
             
             <article>
-                  <div class= "answer">
-                  <p>${mixedAnswers[0]}</p></div>
-                  <div class= "answer">
-                  <p>${mixedAnswers[1]}</p></div>
-                  <div class="answer">
-                  <p>${mixedAnswers[2]}</p></div>
-                  <div class= "answer">
-                  <p>${mixedAnswers[3]}</p></div>
+                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                        <p>${mixedAnswers[0]}</p>
+                  </button>
+                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                        <p>${mixedAnswers[1]}</p>
+                  </button>
+                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class="answer">
+                        <p>${mixedAnswers[2]}</p>
+                  </button>
+                  <button onclick="isTrue(${mixedAnswers[i]}, ${i})" class= "answer">
+                        <p>${mixedAnswers[3]}</p>
+                  </button>
             </article> 
             </section>`;
             console.log(`Question ${i+1}`); 
@@ -65,7 +75,7 @@ const displayQuizz = (table) => {
             console.log(buttons);
             for (let j=0; j<buttons.length; j++){
                   console.log(buttons[j]);
-                  buttons[j].addEventListener("click", () => isTrue(buttons[j]));
+                  buttons[j].addEventListener("click", () => isTrue(buttons[j], i));
             }
       }   
 }
