@@ -17,14 +17,14 @@
       </div>
       <div class="display">
         <p class="display_title">Time</p>
-        <p class="display_value"><span id="timer"></span>sec</p>
+        <p class="display_value"><span id="timer">00</span>sec</p>
       </div>
     </div>
   </header>
 
 <main>
   <!-- PARTIE HOME CONTAINER-->
-     <section class="home-containner" style="display: none;">
+     <section class="home-containner">
     <div class="welcome">
       <p>Bienvenue au <span>SuperQuizz</span> !!!</p>
       <p>C'est quoi ton petit nom ?</p>
@@ -36,7 +36,7 @@
       </form>
     </div>
     <div class ="button-containner">
-      <button class ="go-button" onclick="displayQuizz(questions)">GO</button>
+      <button class ="go-button" onclick="nextQuestion(questions)">GO</button>
     </div>
   </section>
 
