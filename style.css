@@ -336,3 +336,25 @@ footer {
 @media(max-width : 450px) {
   
 }
+
+
+/* Final page */
+.final{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color : white;
+  font-family: var(--main-typo);
+  padding: 3rem;
+  h2 {
+    font-size: 3.5rem;
+  }
+  p{
+    font-size: 2rem;
+    text-align: center;
+  }
+  #replay {
+    font-size: 1rem;
+    align-self: flex-start;
+  }
+}
