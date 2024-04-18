@@ -8,84 +8,84 @@ const questions = [
     wronganswer3 : "Volley Ligue Amateur de Montauban"
   },
   {
-    question: "Bastien adore manger ses frites avec :",
+    question : "Bastien adore manger ses frites avec :",
     goodanswer : "Une sauce vinaigre échalote",
     wronganswer1 : "Du ketchup",
     wronganswer2 : "Rien, nature et sans sel",
     wronganswer3 : "Sa copine"
   },
   {
-    question: "Oresti arrive en retard le matin car il joue toutes les nuits à :",
+    question : "Oresti arrive en retard le matin car il joue toutes les nuits à :",
     goodanswer : "Valorant",
     wronganswer1 : "League of Legends",
     wronganswer2 : "Snake sur Nokia 3310",
     wronganswer3 : "Blocky Games"
   },
   {
-    question: "AnneDo est une sacrée danseuse ! Quelle danse pratique-t-elle ?",
+    question : "AnneDo est une sacrée danseuse ! Quelle danse pratique-t-elle ?",
     goodanswer : "La Salsa",
     wronganswer1 : "Le Tango Argentin",
     wronganswer2 : "La Capoeira",
     wronganswer3 : "Le Twerk"
   },
   {
-    question: "Lequel des ces groupes/artiste Imanol n'a jamais vu en concert ?",
+    question : "Lequel des ces groupes/artiste Imanol n'a jamais vu en concert ?",
     goodanswer : "Metallica",
     wronganswer1 : "Black Eyed Peas",
     wronganswer2 : "Goran Bregovic",
     wronganswer3 : "Kompromat"
   },
   {
-    question: "Kathalina regarde une fois par semaine un des trois films de la trilogie :",
+    question : "Kathalina regarde une fois par semaine un des trois films de la trilogie :",
     goodanswer : "Batman",
     wronganswer1 : "Le seigneur des anneaux",
     wronganswer2 : "Matrix",
     wronganswer3 : "Star Wars"
   },
   {
-    question: "Jo s'est déjà retrouvé seul dans un virgin megastore avec une célébrité ! Mais laquelle ?",
+    question : "Jo s'est déjà retrouvé seul dans un Virgin Megastore avec une célébrité ! Mais laquelle ?",
     goodanswer : "Gad Elmaleh",
     wronganswer1 : "Kylian Mbappé",
     wronganswer2 : "Joey Star",
     wronganswer3 : "Eric et Ramzy (enfin juste Eric... ou alors c'etait Ramzy ?)"
   },
   {
-    question: "Des fois Bertrand est maladroit, il s'est déjà cassé la clavicule :",
+    question : "Des fois Bertrand est maladroit, il s'est déjà cassé la clavicule :",
     goodanswer : "En enjambant un portail pourtant ouvert",
     wronganswer1 : "En tombant dans sa douche",
     wronganswer2 : "Au ski, apres un 360 frontflip nosegrab mal replaqué",
-    wronganswer3 : "En glissant d'un plongeoir"
+    wronganswer3 : "En glissant sur un plongeoir"
   },
   {
-    question: "Vanessa aime voyager! Lequel de ces pays n'a t'elle pas encore visité?",
+    question : "Vanessa aime voyager ! Lequel de ces pays n'a t'elle pas encore visité ?",
     goodanswer : "Le Kenya",
     wronganswer1 : "Le Ghana",
     wronganswer2 : "La Tunisie",
     wronganswer3 : "La Belgique"
   },
   {
-    question: "Megane adore les tatoos et en a plusieur, lequel a t'elle fait?",
-    goodanswer : "Un oiseau qui s'envole",
+    question: "Megane adore les tatoos et en a plusieurs, lequel a t'elle fait ?",
+    goodanswer : "Un oiseau",
     wronganswer1 : "Le cerf du Jagermeister",
     wronganswer2 : "Le visage de Billie Elish",
-    wronganswer3 : "Le prenom de son mec"
+    wronganswer3 : "Le logo HTML"
   },
   {
-    question: "Nicolas est un grand gaillard mais il a une grande phobie ! De quoi s'agit-il ? ",
+    question : "Nicolas est un grand gaillard mais il a une grande phobie ! De quoi s'agit-il ? ",
     goodanswer : "Des rats",
     wronganswer1 : "De JavaScript",
     wronganswer2 : "Du vide",
     wronganswer3 : "De la foule"
   },
   {
-    question: "Lubin aime soigner sa chevelure! A quand remonte sa derniere visite chez les coiffeur ?",
+    question : "Lubin aime soigner sa chevelure ! A quand remonte sa derniere visite chez le coiffeur ?",
     goodanswer : "6 ans",
     wronganswer1 : "3 ans",
     wronganswer2 : "8 ans",
     wronganswer3 : "Hier, entre 12h30 et 14h00 pour dégager un peu la nuque"
   },
   {
-    question: "Julien a dit: “j'aimerais être aussi bon formateur que j'etais ... “ :",
+    question : "Julien a dit: “J'aimerais être aussi bon formateur que j'etais ... “ :",
     goodanswer : "Entraineur de Kayak",
     wronganswer1 : "Joueur de pétanque",
     wronganswer2 : "Musicien",
@@ -97,6 +97,7 @@ let score = 0;
 let index = 0; 
 let timer;
 let waitingAnswer = true;
+let playerName = "";
 
 /* Fonction de randomisation des réponses */ 
 
@@ -183,7 +184,7 @@ if (index < table.length) {
   // Afficage de la question
   document.querySelector("main").innerHTML = `<section class="quizz-containner">
     <div id = "question">
-      <p> QUESTION ${index+1}:</p>
+      <p> QUESTION ${index+1} :</p>
       <p>${questions[index].question}</p>
     </div>
     <article>
@@ -204,13 +205,13 @@ if (index < table.length) {
     // création d'un message personalisé en fonction du score 
     let message = "";
     if (score <=4 ){
-      message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
+      message = `😖 Wow c'est nul ${playerName} 😖 <br> On a rarement vu quelqu'un d'aussi mauvais !`
     } else if (score <= 8) {
-      message = "😕Bien tenté 😕 <br> Tu as encore beaucoup de choses à apprendre sur tes camarades "
+      message = `😕 Bien tenté ${playerName} 😕 <br> Tu as encore beaucoup de choses à apprendre sur tes camarades...`
     } else if (score <= 12) {
-      message = "👏 C'est une belle performance 👏 <br> Impressionnant !"
+      message = `👏 C'est une belle performance ${playerName} 👏 <br> Impressionnant !`
     } else {
-      message = "🤩 Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !"
+      message = `🤩 Niquel ${playerName} ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !`
     }
     // Affichage du bloc finale
     document.querySelector("main").innerHTML = ` <section class="home-containner final">
@@ -221,3 +222,13 @@ if (index < table.length) {
     </section>`
   }
 }  
+
+
+const startGame = () => {
+  const firstName = document.getElementById("firstname");
+  playerName = firstName.value;
+  nextQuestion(questions);
+}
+  // récupère l'élement de l'input avec le name
+  // Mémorise la value dans une variable globale
+  // Puis nextQuestions(questions)
