@@ -270,11 +270,62 @@ Main{
       border-color: whitesmoke;
       font-family: "Itim", cursive;
       font-weight: 400;
-      font-style: normal;   
+      font-style: normal;  
+    }  
     .answer:hover {
       background-color: #ffa216;
       color: white;
     }
+    .answer.wrong {
+      background-color: red;
+      animation: myAnim 2s linear 0s 4 normal forwards;
+    }
+  }
+  
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  5% {
+    animation-timing-function: ease-in;
+    transform: translateX(-30px);
+  }
+
+  15% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  25% {
+    animation-timing-function: ease-in;
+    transform: translateX(-38px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  52% {
+    animation-timing-function: ease-in;
+    transform: translateX(-80px);
+  }
+
+  70% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-250px);
   }
 }
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */

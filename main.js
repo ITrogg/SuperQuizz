@@ -96,9 +96,7 @@ const questions = [
 let score = 0;
 let index = 0; 
 let timer;
-let variableglobale = true;
-document.querySelector(".quizz-containner").style.display = "none"; //! A enlever directement de l'HTML 
-
+let waitingAnswer = true;
 
 /* Fonction de randomisation des réponses */ 
 
@@ -139,7 +137,7 @@ const startTimer = (departSecondes) => {
 
 const isTrue = (reponse, numeroQuestion, buttonId) => {
       // si variable globale === true alors jouer
-    if(variableglobale === true){
+    if(waitingAnswer === true){
       console.log("jouer")
       // Récupérer le bouton
       const button = document.getElementById(buttonId)    
@@ -151,9 +149,9 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
       if (reponse === myQuestion.goodanswer) {
         console.log("Tu as gagné")
         score ++
-        button.style.backgroundColor = 'green';
+        button.classList.add('true');
       } else {
-        button.style.backgroundColor = 'red';
+        button.classList.add('wrong');
         console.log("Tu as perdu")
       }
       setTimeout ( () => {
@@ -161,7 +159,7 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
         nextQuestion(questions);
        }, 1000);  
       // changer la valeur de la variable globale à false
-      variableglobale = false;
+      waitingAnswer = false;
       // Sinon, afficher une alert précisant que la réponse est donnée
     } else {
         alert("réponse déjà donnée")      
@@ -175,7 +173,7 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
   /** Fonction d'affichage  */
 
 const nextQuestion = (table) => { 
- variableglobale = true; 
+  waitingAnswer = true; 
 if (index < table.length) {
   // mélanger les réponses 
   const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
