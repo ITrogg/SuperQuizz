@@ -43,7 +43,7 @@ const questions = [
     wronganswer3 : "Star Wars"
   },
   {
-    question : "Jo s'est déjà retrouvé seul dans un virgin megastore avec une célébrité ! Mais laquelle ?",
+    question : "Jo s'est déjà retrouvé seul dans un Virgin Megastore avec une célébrité ! Mais laquelle ?",
     goodanswer : "Gad Elmaleh",
     wronganswer1 : "Kylian Mbappé",
     wronganswer2 : "Joey Star",
@@ -54,21 +54,21 @@ const questions = [
     goodanswer : "En enjambant un portail pourtant ouvert",
     wronganswer1 : "En tombant dans sa douche",
     wronganswer2 : "Au ski, apres un 360 frontflip nosegrab mal replaqué",
-    wronganswer3 : "En glissant d'un plongeoir"
+    wronganswer3 : "En glissant sur un plongeoir"
   },
   {
-    question : "Vanessa aime voyager! Lequel de ces pays n'a t'elle pas encore visité?",
+    question : "Vanessa aime voyager ! Lequel de ces pays n'a t'elle pas encore visité ?",
     goodanswer : "Le Kenya",
     wronganswer1 : "Le Ghana",
     wronganswer2 : "La Tunisie",
     wronganswer3 : "La Belgique"
   },
   {
-    question: "Megane adore les tatoos et en a plusieurs, lequel a t'elle fait?",
-    goodanswer : "Un oiseau qui s'envole",
+    question: "Megane adore les tatoos et en a plusieurs, lequel a t'elle fait ?",
+    goodanswer : "Un oiseau",
     wronganswer1 : "Le cerf du Jagermeister",
     wronganswer2 : "Le visage de Billie Elish",
-    wronganswer3 : "Le prenom de son mec"
+    wronganswer3 : "Le logo HTML"
   },
   {
     question : "Nicolas est un grand gaillard mais il a une grande phobie ! De quoi s'agit-il ? ",
@@ -78,14 +78,14 @@ const questions = [
     wronganswer3 : "De la foule"
   },
   {
-    question : "Lubin aime soigner sa chevelure! A quand remonte sa derniere visite chez les coiffeur ?",
+    question : "Lubin aime soigner sa chevelure ! A quand remonte sa derniere visite chez le coiffeur ?",
     goodanswer : "6 ans",
     wronganswer1 : "3 ans",
     wronganswer2 : "8 ans",
     wronganswer3 : "Hier, entre 12h30 et 14h00 pour dégager un peu la nuque"
   },
   {
-    question : "Julien a dit: “j'aimerais être aussi bon formateur que j'etais ... “ :",
+    question : "Julien a dit: “J'aimerais être aussi bon formateur que j'etais ... “ :",
     goodanswer : "Entraineur de Kayak",
     wronganswer1 : "Joueur de pétanque",
     wronganswer2 : "Musicien",
@@ -184,7 +184,7 @@ if (index < table.length) {
   // Afficage de la question
   document.querySelector("main").innerHTML = `<section class="quizz-containner">
     <div id = "question">
-      <p> QUESTION ${index+1}:</p>
+      <p> QUESTION ${index+1} :</p>
       <p>${questions[index].question}</p>
     </div>
     <article>
