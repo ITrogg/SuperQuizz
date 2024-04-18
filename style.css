@@ -277,7 +277,37 @@ Main{
       background-color: #ffa216;
       color: white;
     }
+    .answer.true {
+      background-color: green;
+      animation-name: trueAnswer;
+      animation-duration: 3s;
+    }
 }
+
+@keyframes trueAnswer {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  17%{
+    transform: translate(0px, -20px);
+  }
+  33%{
+    transform: translate(0px, 0px);
+  }
+  50%{
+    transform: translate(0px, -20px);
+  }
+  66%{
+    transform: translate(0px, 0px);
+  }
+  83%{
+    transform: translate(0px, -20px);
+  }
+  100%{
+    transform: translate(0px, 0px);
+  }
+}
+
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
 @media(max-width : 450px) {

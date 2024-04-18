@@ -92,7 +92,7 @@ const questions = [
     wronganswer3 : "Chômeur"
   },
 ]
-
+let temps = 0;
 let score = 0;
 let index = 0; 
 let timer;
@@ -140,7 +140,6 @@ const startTimer = (departSecondes) => {
 const isTrue = (reponse, numeroQuestion, buttonId) => {
       // si variable globale === true alors jouer
     if(variableglobale === true){
-      console.log("jouer")
       // Récupérer le bouton
       const button = document.getElementById(buttonId)    
     
@@ -149,17 +148,15 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
     
       // Vérifier si la réponse === question récuperée , goodanswer
       if (reponse === myQuestion.goodanswer) {
-        console.log("Tu as gagné")
         score ++
-        button.style.backgroundColor = 'green';
+        button.classList.add('true');
       } else {
-        button.style.backgroundColor = 'red';
-        console.log("Tu as perdu")
+        button.classList.add('false');
       }
       setTimeout ( () => {
         clearInterval(timer);
         nextQuestion(questions);
-       }, 1000);  
+       }, 3000);  
       // changer la valeur de la variable globale à false
       variableglobale = false;
       // Sinon, afficher une alert précisant que la réponse est donnée
