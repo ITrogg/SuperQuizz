@@ -47,7 +47,7 @@ const questions = [
     goodanswer : "Gad Elmaleh",
     wronganswer1 : "Kylian Mbappé",
     wronganswer2 : "Joey Star",
-    wronganswer3 : "Eric et Ramzy (enfin juste Eric... ou alors c'etait Ramzy ?)"
+    wronganswer3 : "Eric et Ramzy (enfin juste Eric... ou bien Ramzy ?)"
   },
   {
     question : "Des fois Bertrand est maladroit, il s'est déjà cassé la clavicule :",
