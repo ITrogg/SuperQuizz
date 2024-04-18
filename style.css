@@ -3,16 +3,18 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  --gradient-color :  -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#edba6d));
+  --gradient-color1 : -moz-linear-gradient(top, #ffffff, #edba6d);
+  --gradient-color2 : linear-gradient(to bottom, #ffffff, #edba6d);
   --main-color : black;
   --main-typo : "Concert One", sans-serif; 
-  --background-color : #fcb242;
   --box-color : linear-gradient(180deg, rgba(117,65,226,1) 0%, rgba(64,36,124,1) 100%);
-  box-sizing: border-box;
 }
 
 /* Positionnement du background */
 body{
-  background-color: var(--background-color);
+  background-color: #fcb242;;
   background-image:url(./img/Desktop_background.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -160,7 +162,6 @@ Main{
       background-color: #FFE5BF;
       color: black;
       box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
-
     }
     .go-button:hover {
       background-color: #FFA216;
@@ -271,11 +272,11 @@ Main{
       font-family: "Itim", cursive;
       font-weight: 400;
       font-style: normal;   
+    }
     .answer:hover {
       background-color: #ffa216;
       color: white;
     }
-  }
 }
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
