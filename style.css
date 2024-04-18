@@ -70,7 +70,7 @@ header {
 @media (max-width : 450px){
   header{
     justify-content: center;
-    height: 30vh;
+    height: 28vh;
   }
   .score-background{
     height: 12vh;
@@ -286,7 +286,7 @@ Main{
    .quizz-containner {
     background: var(--box-color);
     width: 98%;
-    height: 32rem;
+    height: 33.2rem;
    }
    #question {
     background-color: var(--box-color);
@@ -314,7 +314,6 @@ Main{
       margin-top: 1rem;
       width: 90%;
       justify-content: flex-start;
-      margin-left: 1rem;
     }
     .answer:hover {
       background-color: #FFA216;
@@ -366,6 +365,9 @@ footer {
 /* Page finale mobile */
 @media (max-width : 450px) {
   .final{
+    width: 98%;
+    height: 30rem;
+    margin-top: -5rem;
     h2 {
       font-size: 2.5rem;
     }
