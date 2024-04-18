@@ -162,10 +162,6 @@ Main{
       background-color: #FFE5BF;
       color: black;
       box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
-      background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#edba6d));
-      background: -moz-linear-gradient(top, #ffffff, #edba6d);
-      background: linear-gradient(to bottom, #ffffff, #edba6d);
-
     }
     .go-button:hover {
       background-color: #FFA216;
@@ -276,11 +272,11 @@ Main{
       font-family: "Itim", cursive;
       font-weight: 400;
       font-style: normal;   
+    }
     .answer:hover {
       background-color: #ffa216;
       color: white;
     }
-  }
 }
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
