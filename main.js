@@ -92,7 +92,7 @@ const questions = [
     wronganswer3 : "Chômeur"
   },
 ]
-let temps = 0;
+
 let score = 0;
 let index = 0; 
 let timer;
@@ -120,7 +120,7 @@ function arrayShuffle(good, bads) {
   /** Fonction Timer */
 
 const startTimer = (departSecondes) => {
-  let temps = departSecondes
+  temps = departSecondes
   const timerElement = document.getElementById("timer")
   timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
@@ -132,6 +132,7 @@ const startTimer = (departSecondes) => {
       clearInterval(timer);
       nextQuestion(questions);
     }
+    return secondes
   }, 1000)
 }
 /** FONCTION DE VERIFICATION */
@@ -148,7 +149,8 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
     
       // Vérifier si la réponse === question récuperée , goodanswer
       if (reponse === myQuestion.goodanswer) {
-        score ++
+        console.log(parseInt(((parseInt(document.getElementById("timer").textContent))/59)*100));
+        score = score + parseInt(((parseInt(document.getElementById("timer").textContent))/59)*100); 
         button.classList.add('true');
       } else {
         button.classList.add('false');
@@ -202,11 +204,11 @@ if (index < table.length) {
     document.querySelector(".score-background").remove();
     // création d'un message personalisé en fonction du score 
     let message = "";
-    if (score <=4 ){
+    if (score <= 300){
       message = "😖 Wow c'est nul 😖 <br> On a rarement vu quelqu'un d'aussi mauvais"
-    } else if (score <= 8) {
+    } else if (score <= 700) {
       message = "😕Bien tenté 😕 <br> Tu as encore beaucoup de choses à apprendre sur tes camarades "
-    } else if (score <= 12) {
+    } else if (score <= 1100) {
       message = "👏 C'est une belle performance 👏 <br> Impressionnant !"
     } else {
       message = "🤩 Niquel ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !"

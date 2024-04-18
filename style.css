@@ -280,7 +280,7 @@ Main{
     .answer.true {
       background-color: green;
       animation-name: trueAnswer;
-      animation-duration: 3s;
+      animation-duration: 2s;
     }
 }
 
