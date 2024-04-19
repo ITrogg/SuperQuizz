@@ -276,14 +276,42 @@ Main{
       background-color: #ffa216;
       color: white;
     }
+    .answer.true {
+      background-color: green;
+      animation-name: trueAnswer;
+      animation-duration: 2s;
+    }
     .answer.wrong {
       background-color: red;
-      animation: myAnim 2s linear 0s 4 normal forwards;
+      animation: wrongAnswer 2s linear 0s 4 normal forwards;
     }
-  
-  
+}
 
-@keyframes myAnim {
+@keyframes trueAnswer {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  17%{
+    transform: translate(0px, -20px);
+  }
+  33%{
+    transform: translate(0px, 0px);
+  }
+  50%{
+    transform: translate(0px, -20px);
+  }
+  66%{
+    transform: translate(0px, 0px);
+  }
+  83%{
+    transform: translate(0px, -20px);
+  }
+  100%{
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes wrongAnswer {
   0% {
     animation-timing-function: ease-out;
     transform: translateX(0);
@@ -328,6 +356,7 @@ Main{
     transform: translateX(-250px);
   }
 }
+
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
 @media(max-width : 450px) {
@@ -387,12 +416,6 @@ footer {
   width: 100%;
   font-family: var(--main-typo);
 }
-
-
-@media(max-width : 450px) {
-  
-}
-
 
 /* Final page */
 .final{

@@ -119,7 +119,7 @@ function arrayShuffle(good, bads) {
   /** Fonction Timer */
 
 const startTimer = (departSecondes) => {
-  let temps = departSecondes
+  temps = departSecondes
   const timerElement = document.getElementById("timer")
   timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
@@ -131,6 +131,7 @@ const startTimer = (departSecondes) => {
       clearInterval(timer);
       nextQuestion(questions);
     }
+    return secondes
   }, 1000)
 }
 /** FONCTION DE VERIFICATION */
@@ -148,17 +149,15 @@ const isTrue = (reponse, numeroQuestion, buttonId) => {
     
       // Vérifier si la réponse === question récuperée , goodanswer
       if (reponse === myQuestion.goodanswer) {
-        console.log("Tu as gagné")
-        score ++
+        score = score + parseInt(((parseInt(document.getElementById("timer").textContent))/59)*100); 
         button.classList.add('true');
       } else {
         button.classList.add('wrong');
-        console.log("Tu as perdu")
       }
       setTimeout ( () => {
         clearInterval(timer);
         nextQuestion(questions);
-       }, 1000);  
+       }, 3000);  
       // changer la valeur de la variable globale à false
       waitingAnswer = false;
       // Sinon, afficher une alert précisant que la réponse est donnée
@@ -204,11 +203,11 @@ if (index < table.length) {
     document.querySelector(".score-background").remove();
     // création d'un message personalisé en fonction du score 
     let message = "";
-    if (score <=4 ){
+    if (score <= 300 ){
       message = `😖 Wow c'est nul ${playerName} 😖 <br> On a rarement vu quelqu'un d'aussi mauvais !`
-    } else if (score <= 8) {
+    } else if (score <= 700) {
       message = `😕 Bien tenté ${playerName} 😕 <br> Tu as encore beaucoup de choses à apprendre sur tes camarades...`
-    } else if (score <= 12) {
+    } else if (score <= 1100) {
       message = `👏 C'est une belle performance ${playerName} 👏 <br> Impressionnant !`
     } else {
       message = `🤩 Niquel ${playerName} ! Tu déchires tout 🤩 <br> On va construire un autel à ta gloire !`
