@@ -437,6 +437,7 @@ footer {
 @media(max-width : 450px){
   footer {
     position: static;
+    margin-top: 2%;
   }
 }
 
