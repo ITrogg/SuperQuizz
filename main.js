@@ -118,20 +118,18 @@ function arrayShuffle(good, bads) {
 
   /** Fonction Timer */
 
-const startTimer = (departSecondes) => {
-  let temps = departSecondes
+const startTimer = (duration) => {
   const timerElement = document.getElementById("timer")
   timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
-    let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
+    let secondes = parseInt(duration, 10) // Afficher deux chiffres quand < 10
     secondes = secondes < 10 ? "0" + secondes : secondes 
     timerElement.innerText = `${secondes}` // Display
-    temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
-    if (temps <= 0) {
+    duration = duration - 1
+    if (duration <= -1) {
       clearInterval(timer);
       nextQuestion(questions);
     }
-    return secondes
   }, 1000)
 }
 /** FONCTION DE VERIFICATION */
