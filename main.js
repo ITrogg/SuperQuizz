@@ -8,7 +8,7 @@ const questions = [
     wronganswer3 : "Volley Ligue Amateur de Montauban"
   },
   {
-    question : "Bastien adore manger ses frites avec :",
+    question : "Bastien adore manger ses frites avec",
     goodanswer : "Une sauce vinaigre échalote",
     wronganswer1 : "Du ketchup",
     wronganswer2 : "Rien, nature et sans sel",
