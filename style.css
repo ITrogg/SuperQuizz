@@ -249,42 +249,41 @@ Main{
     }
   } 
 
-  article {
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0 3.9rem;
+  width: 100%;
+  
+  .answer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-radius: 5px;
-    padding: 0 3.9rem;
-    width: 100%;
-    
-    .answer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #FFE5BF;
-      height: 4.7rem;
-      width: 47%;
-      margin-top: 2rem;
-      border-radius: 0.5rem;
-      border-color: whitesmoke;
-      font-family: "Itim", cursive;
-      font-weight: 400;
-      font-style: normal;  
-    }  
-    }
-    .answer:hover {
-      background-color: #ffa216;
-      color: white;
-    }
-    .answer.true {
-      background-color: green;
-      animation-name: trueAnswer;
-      animation-duration: 2s;
-    }
-    .answer.wrong {
-      background-color: red;
-      animation: wrongAnswer 2s linear 0s 4 normal forwards;
-    }
+    justify-content: center;
+    align-items: center;
+    background-color: #FFE5BF;
+    height: 4.7rem;
+    width: 47%;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    border-color: whitesmoke;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;  
+  }  
+  .answer:hover {
+    background-color: #ffa216;
+    color: white;
+  }
+  .answer.true {
+    background-color: green;
+    animation-name: trueAnswer;
+    animation-duration: 2s;
+  }
+  .answer.wrong {
+    background-color: red;
+    animation: wrongAnswer 2s linear 0s 4 normal forwards;
+  }
 }
 
 @keyframes trueAnswer {
