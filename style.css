@@ -258,8 +258,8 @@ article {
   width: 100%;
   .answer {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
     border-radius: 5px;
     padding: 0 3.9rem;
     width: 100%;
