@@ -428,6 +428,11 @@ footer {
   width: 100%;
   font-family: var(--main-typo);
 }
+@media(max-width : 450px){
+  footer {
+    position: static;
+  }
+}
 
 /* Final page */
 .final{
