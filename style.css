@@ -36,7 +36,6 @@ header {
   flex-direction: row-reverse;
   padding: 2rem;
 }
-/* Box Score */
 .score-background{
   background: var(--box-color);
   align-self: flex-end;
@@ -48,14 +47,14 @@ header {
   justify-content: space-between;
   font-family: var(--main-typo);
   color: white;
-  .display{
+  .box{
     width: 50%;
-    .display_title{
+    .box_title{
       max-width: 100%;
       max-height: 30%;
       font-size: 2.3rem;
     }
-    .display_value{
+    .box_value{
       max-width: 100%;
       max-height: 70%;
       margin-top: 10%;
@@ -70,16 +69,23 @@ header {
 @media (max-width : 450px){
   header{
     justify-content: center;
-    height: 28vh;
+    height: 12vh;
+    margin-top: 130px;
+    padding-bottom: 10px;
   }
   .score-background{
+    padding-bottom: 10%;
+    padding-top: 2%;
+    margin-top: 0;
     height: 12vh;
     width: 90%;
-    .display {
-      .display_title {
+    .box {
+      text-align: center;
+      padding-right: 40px;
+      .box_title {
         font-size: 1.5rem;
       }
-      .display_value{
+      .box_value{
         font-size: 0.8rem;
         span {
           font-size: 2.5rem;
@@ -92,7 +98,7 @@ header {
 
 /* SECTION HOME CONTAINNER  */
 
-Main{
+main{
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -173,7 +179,7 @@ Main{
 /* MEDIA QUERIE SECTION HOME CONTAINNER  */
 
 @media(max-width : 450px) {
-  Main{
+  main{
   margin-top: 0rem;
  }
  .home-containner{
@@ -427,6 +433,12 @@ footer {
   bottom: 0;
   width: 100%;
   font-family: var(--main-typo);
+}
+@media(max-width : 450px){
+  footer {
+    position: static;
+    margin-top: 2%;
+  }
 }
 
 /* Final page */
