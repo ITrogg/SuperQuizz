@@ -293,6 +293,7 @@ article {
       background-color: red;
       animation: wrongAnswer 2s;
     }
+}
 
 @keyframes trueAnswer {
   0% {
@@ -367,16 +368,16 @@ article {
 /* MEDIA QUERIE SECTION QUIZZ CONTAINNER  */
 
 @media(max-width : 450px) {
-  Main{
+  main{
     margin-top: 0rem;
     padding: 0 1rem;
-   }
-   .quizz-containner {
+  }
+  .quizz-containner {
     background: var(--box-color);
     width: 98%;
     height: 33.2rem;
-   }
-   #question {
+  }
+  #question {
     background-color: var(--box-color);
     margin: 0 0 0 1rem;
     padding: 0;
@@ -389,7 +390,7 @@ article {
     p{
       color: white;
     }
-   }
+  }
 
   article{
     display: flex;
@@ -403,10 +404,6 @@ article {
       width: 90%;
       justify-content: flex-start;
       padding: 0.5rem;
-    }
-    .answer:hover {
-      background-color: #FFA216;
-      color: white;
     }
   }
 }
