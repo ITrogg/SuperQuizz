@@ -119,7 +119,7 @@ function arrayShuffle(good, bads) {
   /** Fonction Timer */
 
 const startTimer = (departSecondes) => {
-  temps = departSecondes
+  let temps = departSecondes
   const timerElement = document.getElementById("timer")
   timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
