@@ -1,4 +1,4 @@
-//  Tableau questions 
+  /** DECLARATIONS DES VARIABLES GLOBALES */
 const questions = [
   { 
     question : "Le club de volley de Dylan s'appel VLAM, cela signifie :",
@@ -92,16 +92,15 @@ const questions = [
     wronganswer3 : "Chômeur"
   },
 ]
-
 let score = 0;
 let index = 0; 
 let timer;
 let waitingAnswer = true;
 let playerName = "";
 
-/* Fonction de randomisation des réponses */ 
+  /** FONCTION ORDRE ALEATOIRE DES REPONSES */ 
 
-function arrayShuffle(good, bads) {
+const arrayShuffle = (good, bads) => {
   const rand = Math.floor(Math.random() * 4);
   bads.splice(rand, 0, good);
   return bads;
@@ -116,71 +115,65 @@ function arrayShuffle(good, bads) {
   // return a;
 }
 
-  /** Fonction Timer */
+  /** FONCTION TIMER */
 
-const startTimer = (departSecondes) => {
-  let temps = departSecondes
+const startTimer = (duration) => {
   const timerElement = document.getElementById("timer")
   timerElement.innerText ="60"
   timer = setInterval(() => { // Diminuer temps ttes les secondes
-    let secondes = parseInt(temps, 10) // Afficher deux chiffres quand < 10
+    let secondes = parseInt(duration, 10) // Afficher deux chiffres quand < 10
     secondes = secondes < 10 ? "0" + secondes : secondes 
     timerElement.innerText = `${secondes}` // Display
-    temps = temps <= 0 ? 0 : temps - 1 // pour stopper le timer à 0 sinon négatif
-    if (temps <= 0) {
+    duration = duration - 1
+    if (duration <= -1) {
       clearInterval(timer);
       nextQuestion(questions);
     }
-    return secondes
   }, 1000)
 }
-/** FONCTION DE VERIFICATION */
 
+  /** FONCTION DE VERIFICATION */
 
 const isTrue = (reponse, numeroQuestion, buttonId) => {
       // si variable globale === true alors jouer
-    if(waitingAnswer === true){
-      console.log("jouer")
-      // Récupérer le bouton
-      const button = document.getElementById(buttonId)    
-    
-      // Dans ma data, récupérer la question via son numero
-      const myQuestion = questions[numeroQuestion] //MyQuestion: Object
-    
-      // Vérifier si la réponse === question récuperée , goodanswer
-      if (reponse === myQuestion.goodanswer) {
-        score = score + parseInt(((parseInt(document.getElementById("timer").textContent))/59)*100); 
-        button.classList.add('true');
-      } else {
-        button.classList.add('wrong');
-      }
-      setTimeout ( () => {
-        clearInterval(timer);
-        nextQuestion(questions);
-       }, 3000);  
-      // changer la valeur de la variable globale à false
-      waitingAnswer = false;
-      // Sinon, afficher une alert précisant que la réponse est donnée
-    } else {
-        alert("réponse déjà donnée")      
-      }
-      // attend un tite seconde avant de passer à la question suivante
-      // changer la valeur de la variable globale à false
+  if(waitingAnswer === true){
+    // Récupérer le bouton
+    const button = document.getElementById(buttonId)    
   
+    // Dans ma data, récupérer la question via son numero
+    const myQuestion = questions[numeroQuestion] //MyQuestion: Object
+  
+    // Vérifier si la réponse === question récuperée , goodanswer
+    if (reponse === myQuestion.goodanswer) {
+      score = score + parseInt(((parseInt(document.getElementById("timer").textContent))/59)*100); 
+      button.classList.add('true');
+    } else {
+      button.classList.add('wrong');
+    }
+    // attend une tite seconde avant de passer à la question suivante
+    setTimeout ( () => {
+      clearInterval(timer);
+      nextQuestion(questions);
+    }, 3000);  
+    // changer la valeur de la variable globale à false
+    waitingAnswer = false;
     // Sinon, afficher une alert précisant que la réponse est donnée
+  } else {
+    alert("réponse déjà donnée")      
   }
+}
 
-  /** Fonction d'affichage  */
+  /** FONCTION D'AFFICHAGE  */
 
 const nextQuestion = (table) => { 
   waitingAnswer = true; 
-if (index < table.length) {
+  if (index < table.length) {
   // mélanger les réponses 
   const mixedAnswers = arrayShuffle(table[index].goodanswer, [table[index].wronganswer1, table[index].wronganswer2, table[index].wronganswer3]);
-  // suppr la question précedante et affiche le score actuel 
+  // suppr la question précedante et mise à jour score 
   document.querySelector("section").remove();
   document.querySelector("#score").textContent = score;
-  // Afficage de la question
+  // Affichage de la question
   document.querySelector("main").innerHTML = `<section class="quizz-containner">
     <div id = "question">
       <p> QUESTION ${index+1} :</p>
@@ -222,12 +215,10 @@ if (index < table.length) {
   }
 }  
 
+  /** FONCTION DE DEMARAGE  */
 
 const startGame = () => {
-  const firstName = document.getElementById("firstname");
-  playerName = firstName.value;
+  const firstName = document.getElementById("firstname"); // Recupère l'élement input
+  playerName = firstName.value; 
   nextQuestion(questions);
 }
-  // récupère l'élement de l'input avec le name
-  // Mémorise la value dans une variable globale
-  // Puis nextQuestions(questions)
