@@ -249,7 +249,15 @@ Main{
     }
   } 
 
-  article {
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0 3.9rem;
+  width: 100%;
+  
+  .answer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -285,7 +293,6 @@ Main{
       background-color: red;
       animation: wrongAnswer 2s;
     }
-
 
 @keyframes trueAnswer {
   0% {
@@ -395,6 +402,7 @@ Main{
       margin-top: 1rem;
       width: 90%;
       justify-content: flex-start;
+      padding: 0.5rem;
     }
     .answer:hover {
       background-color: #FFA216;
