@@ -76,6 +76,7 @@ header {
   .score-background{
     padding-bottom: 10%;
     padding-top: 2%;
+    margin-top: 0;
     height: 12vh;
     width: 90%;
     .box {
