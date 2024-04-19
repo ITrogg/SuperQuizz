@@ -394,6 +394,7 @@ article {
       margin-top: 1rem;
       width: 90%;
       justify-content: flex-start;
+      padding: 0.5rem;
     }
     .answer:hover {
       background-color: #FFA216;
