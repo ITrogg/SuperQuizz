@@ -12,7 +12,7 @@ SuperQuizz est un projet de quizz fun et dynamique réalisé en groupe sur une s
 
 ## Jouer au Quizz
 
-Pour jouer au quizz, suivez simplement le lien suivant : [SuperQuizz] (https://itrogg.github.io/SuperQuizz/)
+Pour jouer au quizz, suivez simplement le lien suivant : [SuperQuizz](https://itrogg.github.io/SuperQuizz/)
 
 ## Fonctionnalités
 
