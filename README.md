@@ -4,11 +4,11 @@ SuperQuizz est un projet de quizz fun et dynamique réalisé en groupe sur une s
 
 ## Table des matières
 
-Jouer au Quizz
-Fonctionnalités
-Technologies utilisées
-Contribuer
-License
+* Jouer au Quizz
+* Fonctionnalités
+* Technologies utilisées
+* Contribuer
+* License
 
 ## Jouer au Quizz
 
