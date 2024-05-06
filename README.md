@@ -32,11 +32,11 @@ Le projet SuperQuizz a été réalisé en utilisant les technologies suivantes :
 
 Vous pouvez contribuer à l'amélioration de Quizzy en suivant ces étapes :
 
-Fork ce dépôt
-Créez une branche pour votre fonctionnalité (git checkout -b amelioration-fonctionnalite)
-Commitez vos modifications (git commit -am 'Ajouter une nouvelle fonctionnalité')
-Poussez vers la branche (git push origin amelioration-fonctionnalite)
-Créez une nouvelle Pull Request
+* Fork ce dépôt
+* Créez une branche pour votre fonctionnalité (git checkout -b amelioration-fonctionnalite)
+* Commitez vos modifications (git commit -am 'Ajouter une nouvelle fonctionnalité')
+* Poussez vers la branche (git push origin amelioration-fonctionnalite)
+* Créez une nouvelle Pull Request
 
 ## License
 
